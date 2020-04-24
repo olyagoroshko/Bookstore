@@ -7186,15 +7186,15 @@ Navigation Styles
                                                                     }
                                                                     
                                                                     .account__form .input__box {
-                                                                        margin: 0 0 15px;
+                                                                        margin: 0 0 10px;
                                                                     }
                                                                     
                                                                     .account__form .input__box label {
-                                                                        margin: 0 0 10px;
                                                                         line-height: 2;
                                                                         color: #333;
                                                                         font-size: 12px;
                                                                         display: block;
+                                                                        margin: 0px;
                                                                     }
                                                                     
                                                                     .account__form .input__box label span {
@@ -7405,7 +7405,6 @@ Navigation Styles
                                                                     
                                                                     .cart__btn__list li a {
                                                                         background: #fff none repeat scroll 0 0;
-                                                                        border-radius: 5px;
                                                                         border: 2px solid #333;
                                                                         display: block;
                                                                         font-family: "Poppins", sans-serif;
@@ -7420,9 +7419,37 @@ Navigation Styles
                                                                         transition: all 0.3s ease 0s;
                                                                     }
                                                                     
+                                                                    .wn__order li a {
+                                                                        background: #fff none repeat scroll 0 0;
+                                                                        border: 2px solid #333;
+                                                                        display: block;
+                                                                        font-family: "Poppins", sans-serif;
+                                                                        font-size: 16px;
+                                                                        font-weight: 600;
+                                                                        text-align: center;
+                                                                        height: 60px;
+                                                                        width: 300px;
+                                                                        line-height: 50px;
+                                                                        padding: 5px 26px;
+                                                                        text-transform: capitalize;
+                                                                        transition: all 0.3s ease 0s;
+                                                                    }
+                                                                    
+                                                                    .wn__order {
+                                                                        margin: 20px;
+                                                                        margin-left: auto;
+                                                                        margin-right: 25%;
+                                                                    }
+                                                                    
                                                                     .cart__btn__list li a:hover {
                                                                         background: #131212 none repeat scroll 0 0;
                                                                         color: #fff;
+                                                                    }
+                                                                    
+                                                                    .wn__order li a:hover {
+                                                                        background: #e59285 none repeat scroll 0 0;
+                                                                        color: #fff;
+                                                                        border: 2px solid #e59285;
                                                                     }
                                                                     
                                                                     .cartbox-total {
@@ -7758,11 +7785,38 @@ Navigation Styles
                                                                         margin: 0 0 20px;
                                                                     }
                                                                     
+                                                                    .account__form h3 {
+                                                                        color: #2e2e2e;
+                                                                        font-weight: 700;
+                                                                        line-height: 1.35;
+                                                                        font-size: 20px;
+                                                                        margin: 0 0 20px;
+                                                                    }
+                                                                    
                                                                     .customer_details .customar__field .input_box {
                                                                         margin: 0 0 20px;
                                                                     }
                                                                     
+                                                                    .account__form .input_box {
+                                                                        margin: 0 0 20px;
+                                                                    }
+                                                                    
                                                                     .customer_details .customar__field .input_box.space_between {
+                                                                        margin: 0 15px;
+                                                                        width: 50%;
+                                                                    }
+                                                                    
+                                                                    .customer_details .customar__field .input_box.space_between.col-md-8 {
+                                                                        margin: 0px;
+                                                                        width: 50%;
+                                                                    }
+                                                                    
+                                                                    .customer_details .customar__field .input_box.space_between.col-md-4 {
+                                                                        margin: 0px;
+                                                                        width: 50%;
+                                                                    }
+                                                                    
+                                                                    .account__form .input_box.space_between {
                                                                         margin: 0 15px;
                                                                         width: 50%;
                                                                     }
@@ -7772,10 +7826,24 @@ Navigation Styles
                                                                         line-height: 2;
                                                                         font-size: 14px;
                                                                         display: block;
+                                                                        margin: 0px;
+                                                                    }
+                                                                    
+                                                                    .account__form .input_box label {
+                                                                        color: #333;
+                                                                        line-height: 2;
+                                                                        font-size: 12px;
+                                                                        display: block;
+                                                                        margin: 0px;
                                                                     }
                                                                     
                                                                     .customer_details .customar__field .input_box label span {
                                                                         color: red;
+                                                                        font-weight: 700;
+                                                                    }
+                                                                    
+                                                                    .account__form .input_box label span {
+                                                                        color: #e59285;
                                                                         font-weight: 700;
                                                                     }
                                                                     
@@ -7785,6 +7853,21 @@ Navigation Styles
                                                                         border: 1px solid #e1e1e1;
                                                                         width: 100%;
                                                                         padding: 0 10px;
+                                                                    }
+                                                                    
+                                                                    .account__form .input_box input {
+                                                                        height: 40px;
+                                                                        background: #fff none repeat scroll 0 0;
+                                                                        border: 1px solid #e1e1e1;
+                                                                        width: 100%;
+                                                                        padding: 0 10px;
+                                                                    }
+                                                                    
+                                                                    .account__form .margin_between {
+                                                                        display: flex;
+                                                                        margin-bottom: 10px;
+                                                                        margin-left: -15px;
+                                                                        margin-right: -15px;
                                                                     }
                                                                     
                                                                     .customer_details .customar__field .margin_between {
@@ -8703,5 +8786,3 @@ Navigation Styles
                                                                             padding-bottom: 60px;
                                                                         }
                                                                     }
-                                                                    
-                                                                    te
