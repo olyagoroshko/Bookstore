@@ -5584,8 +5584,7 @@ Navigation Styles
 ----------------------------*/
                                                                     
                                                                     .ht__bradcaump__area {
-                                                                        padding-bottom: 110px;
-                                                                        padding-top: 220px;
+                                                                        padding: 4px 80px;
                                                                     }
                                                                     
                                                                     .ht__bradcaump__area_a {
@@ -7205,7 +7204,20 @@ Navigation Styles
                                                                         color: #e59285;
                                                                     }
                                                                     
+                                                                    .customar__field .input__box label span {
+                                                                        color: #e59285;
+                                                                    }
+                                                                    
                                                                     .account__form .input__box input {
+                                                                        background: #fff none repeat scroll 0 0;
+                                                                        border: 1px solid #e1e1e1;
+                                                                        border-radius: 0;
+                                                                        height: 40px;
+                                                                        width: 100%;
+                                                                        padding: 0 0 0 10px;
+                                                                    }
+                                                                    
+                                                                    .customar__field .input__box input {
                                                                         background: #fff none repeat scroll 0 0;
                                                                         border: 1px solid #e1e1e1;
                                                                         border-radius: 0;
@@ -7842,7 +7854,7 @@ Navigation Styles
                                                                     }
                                                                     
                                                                     .customer_details .customar__field .input_box label span {
-                                                                        color: red;
+                                                                        color: #e59285;
                                                                         font-weight: 700;
                                                                     }
                                                                     
