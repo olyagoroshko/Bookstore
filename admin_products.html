@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-7 col-lg-2">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="#">
                                 <img src="images/logo/logo.png" alt="logo images">
                             </a>
                         </div>
@@ -109,78 +109,63 @@
         </div>
         <!-- End Bradcaump area -->
         <!-- cart-main-area start -->
-        <div class="cart-main-area section-padding--lg bg--white">
+        <div class="admin-main-area section-padding--lg bg--white">
             <div class="container">
+                <div class="admin_h2">
+                    <div>
+                        <h2 class="admin_title">Products</h2>
+                    </div>
+                    <div class="admin_delete_button">
+                        <button class="admin_add">Add product</button>
+                        <button class="admin_delete">Delete</button>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-md-12 col-sm-12 ol-lg-12">
                         <form action="#">
-                            <div class="table-content wnro__table table-responsive">
+                            <div class="table-content_admin_user wnro__table table-responsive">
                                 <table>
                                     <thead>
                                         <tr class="title-top">
-                                            <th class="product-name">ID</th>
+                                            <th class="product-checkbox"><input type="checkbox"></th>
                                             <th class="product-thumbnail">Image</th>
                                             <th class="product-name">Title </th>
-                                            <th class="product-name">Author</th>
-                                            <th class="product-name">Genre</th>
-                                            <th class="product-quantity">Pablisher</th>
-                                            <th class="product-quantity">Cover</th>
-                                            <th class="product-price">Year</th>
                                             <th class="product-price">Price</th>
-                                            <th class="product-subtotal">Description</th>
-                                            <th class="product-stock-stauts"><span class="nobr"> Stock Status </span></th>
-                                            <th class="product-remove">Settings</th>
+                                            <th class="product-quantity">Quantity</th>
+                                            <th class="product-stock-stauts">Stock Status</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="product-name"><span class="amount">0001</span></td>
+                                            <td class="user-checkbox"><input type="checkbox"></td>
                                             <td class="product-thumbnail">
-                                                <a href="#"><img src="images/product/sm-3/1.jpg" alt="product img"></a>
+                                                <img src="images/product/sm-3/1.jpg" alt="product img"></a>
                                             </td>
-                                            <td class="product-name"><a href="#">Natoque penatibus</a></td>
-                                            <td class="product-name">
-                                                <a href="#">Gogol</a>
-                                            </td>
-                                            <td class="product-name">
-                                                <a href="#">Horror</a>
-                                            </td>
-                                            <td class="product-name">
-                                                <a href="#">Издательство «Беларусь»</a>
-                                            </td>
-                                            <td class="product-name">
-                                                <a href="#">Издательство «Беларусь»</a>
-                                            </td>
-                                            <td class="product-name">
-                                                <a href="#">1999</a>
-                                            </td>
-                                            <td class="product-name">
-                                                <a href="#">«Мёртвые ду́ши» — произведение Николая Васильевича Гоголя, жанр которого сам автор обозначил как поэму. Изначально задумано как трёхтомник. Первый том был издан в 1842 году. Практически готовый второй том был утерян, но сохранилось несколько глав в черновиках. Третий том не был начат, о нём остались только отдельные сведения.</a>
-                                            </td>
+                                            <td class="product-name"> <a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link" href="#productmodal">Natoque penatibus</a></td>
                                             <td class="product-price"><span class="amount">$165.00</span></td>
-                                            <td class="product-quantity"><input type="number" value="1"></td>
-                                            <td class="product-subtotal">$165.00</td>
-                                            <td class="product-remove"><a href="#">X</a></td>
+                                            <td class="product-quantity">20</td>
+                                            <td class="product-stock-status"><span class="wishlist-in-stock">In Stock</span></td>
                                         </tr>
                                         <tr>
+                                            <td class="user-checkbox"><input type="checkbox"></td>
                                             <td class="product-thumbnail">
-                                                <a href="#"><img src="images/product/sm-3/2.jpg" alt="product img"></a>
+                                                <img src="images/product/sm-3/1.jpg" alt="product img"></a>
                                             </td>
-                                            <td class="product-name"><a href="#">Quisque fringilla</a></td>
-                                            <td class="product-price"><span class="amount">$50.00</span></td>
-                                            <td class="product-quantity"><input type="number" value="1"></td>
-                                            <td class="product-subtotal">$50.00</td>
-                                            <td class="product-remove"><a href="#">X</a></td>
+                                            <td class="product-name"> <a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link" href="#productmodal">Natoque penatibus</a></td>
+                                            <td class="product-price"><span class="amount">$165.00</span></td>
+                                            <td class="product-quantity">20</td>
+                                            <td class="product-stock-status"><span class="wishlist-in-stock">In Stock</span></td>
                                         </tr>
                                         <tr>
+                                            <td class="user-checkbox"><input type="checkbox"></td>
                                             <td class="product-thumbnail">
-                                                <a href="#"><img src="images/product/sm-3/3.jpg" alt="product img"></a>
+                                                <img src="images/product/sm-3/1.jpg" alt="product img"></a>
                                             </td>
-                                            <td class="product-name"><a href="#">Vestibulum suscipit</a></td>
-                                            <td class="product-price"><span class="amount">$50.00</span></td>
-                                            <td class="product-quantity"><input type="number" value="1"></td>
-                                            <td class="product-subtotal">$50.00</td>
-                                            <td class="product-remove"><a href="#">X</a></td>
+                                            <td class="product-name"> <a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link" href="#productmodal">Natoque penatibus</a></td>
+                                            <td class="product-price"><span class="amount">$165.00</span></td>
+                                            <td class="product-quantity">20</td>
+                                            <td class="product-stock-status"><span class="wishlist-in-stock">In Stock</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -212,7 +197,91 @@
 
         </footer>
         <!-- //Footer Area -->
+        <!-- QUICKVIEW PRODUCT -->
+        <div id="quickview-wrapper">
+            <!-- Modal -->
+            <div class="modal fade" id="productmodal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal__container" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header modal__header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-product">
 
+                                <div class="admin-info">
+                                    <form action="#">
+                                        <div class="product__form">
+                                            <div class="row">
+                                                <div class="col-sm-5 col-md-6">
+                                                    <div class="input__box">
+                                                        <label>Title</label>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div class="input__box">
+                                                        <label>Author</label>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div class="input__box">
+                                                        <label>Genre</label>
+                                                        <select size="4" multiple name="hero[]">
+                                                    <option disabled>Choose a genre</option>
+                                                    <option value="Чебурашка">Чебурашка</option>
+                                                    <option selected value="Крокодил Гена">Крокодил Гена</option>
+                                                    <option value="Шапокляк">Шапокляк</option>
+                                                    <option value="Крыса Лариса">Крыса Лариса</option>
+                                                   </select>
+                                                    </div>
+                                                    <div class="input__box">
+                                                        <label>Publishing house</label>
+                                                        <input type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6 col-sm-3">
+                                                    <div class="input__box">
+                                                        <label>Year</label>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div class="input__box">
+                                                        <label>Price</label>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div class="input__box">
+                                                        <label>Quantity</label>
+                                                        <input type="text">
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="input__box">
+                                                <label>Description</label>
+                                                <textarea></textarea>
+                                            </div>
+                                            <div class="input__box">
+                                                <label>Status</label>
+                                                <p><input type="checkbox" name="a" value=""> In Stock</p>
+                                                <p><input type="checkbox" name="a" value=""> Out of Stock</p>
+                                            </div>
+                                            <div class="input__box">
+                                                <label>Image</label>
+
+                                            </div>
+                                            <input type="file" name="file_img">
+                                            <div class="form__btn">
+                                                <button>Register</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END QUICKVIEW PRODUCT -->
     </div>
     <!-- //Main wrapper -->
 
