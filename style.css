@@ -5585,6 +5585,8 @@ Navigation Styles
                                                                     
                                                                     .ht__bradcaump__area {
                                                                         padding: 4px 80px;
+                                                                        height: 90px;
+                                                                        background-color: rgba(0, 0, 0, 0.3);
                                                                     }
                                                                     
                                                                     .ht__bradcaump__area_a {
