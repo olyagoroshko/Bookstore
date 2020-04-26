@@ -1214,7 +1214,11 @@ Helper Class
                                                                     }
                                                                     
                                                                     .section-padding--lg {
-                                                                        padding: 80px 0;
+                                                                        padding: 70px 0;
+                                                                    }
+                                                                    
+                                                                    .admin-main-area.section-padding--lg {
+                                                                        padding: 30px 0;
                                                                     }
                                                                     
                                                                     .section-padding--md {
@@ -2728,6 +2732,10 @@ Header Styles
                                                                         background: transparent url("images/icons/icon_setting_white.png") no-repeat scroll left center;
                                                                     }
                                                                     
+                                                                    .oth-page.header__area .header__sidebar__right>li.setting__bar__icon_ad>a {
+                                                                        background: transparent url("images/icons/icon_setting_white.png") no-repeat scroll left center;
+                                                                    }
+                                                                    
                                                                     .oth-page.header__area .header__sidebar__right>li.shopcart>a {
                                                                         background: rgba(255, 255, 255, 0) url("images/icons/cart_white.png") no-repeat scroll 0 center;
                                                                     }
@@ -3882,7 +3890,7 @@ Navigation Styles
                                                                         padding-right: 50px;
                                                                     }
                                                                     
-                                                                    .product-info h1 {
+                                                                    .-info h1 {
                                                                         font-family: "Poppins", sans-serif;
                                                                         font-size: 22px;
                                                                         margin-bottom: 10px;
@@ -3910,7 +3918,7 @@ Navigation Styles
                                                                         text-decoration: line-through;
                                                                     }
                                                                     
-                                                                    .product-info {
+                                                                    .admin-info {
                                                                         padding-left: 50px;
                                                                         max-width: 50%;
                                                                     }
@@ -3926,7 +3934,7 @@ Navigation Styles
                                                                         display: flex;
                                                                     }
                                                                     
-                                                                    .product-info .select__color h2 {
+                                                                    .admin-info .select__color h2 {
                                                                         align-items: center;
                                                                         font-weight: 600;
                                                                         display: flex;
@@ -3935,13 +3943,13 @@ Navigation Styles
                                                                         font-family: "Poppins", sans-serif;
                                                                     }
                                                                     
-                                                                    .product-info .select__color .color__list {
+                                                                    .admin-info .select__color .color__list {
                                                                         align-items: center;
                                                                         display: flex;
                                                                         margin-left: 30px;
                                                                     }
                                                                     
-                                                                    .product-info .select__color .color__list li a {
+                                                                    .admin-info .select__color .color__list li a {
                                                                         background: #f10 none repeat scroll 0 0;
                                                                         border-radius: 100%;
                                                                         display: block;
@@ -3952,25 +3960,25 @@ Navigation Styles
                                                                         text-indent: 606060px;
                                                                     }
                                                                     
-                                                                    .product-info .select__color .color__list li+li {
+                                                                    .admin-info .select__color .color__list li+li {
                                                                         margin-left: 15px;
                                                                     }
                                                                     
-                                                                    .product-info .select__color .color__list li.gold a {
+                                                                    .admin-info .select__color .color__list li.gold a {
                                                                         background: #cc9900 none repeat scroll 0 0;
                                                                     }
                                                                     
-                                                                    .product-info .select__color .color__list li.orange a {
+                                                                    .admin-info .select__color .color__list li.orange a {
                                                                         background: #cc6600 none repeat scroll 0 0;
                                                                     }
                                                                     
-                                                                    .product-info .select__size {
+                                                                    .admin-info .select__size {
                                                                         margin-bottom: 20px;
                                                                         margin-top: 20px;
                                                                         display: flex;
                                                                     }
                                                                     
-                                                                    .product-info .select__size h2 {
+                                                                    .admin-info .select__size h2 {
                                                                         align-items: center;
                                                                         display: flex;
                                                                         font-weight: 600;
@@ -3979,15 +3987,15 @@ Navigation Styles
                                                                         font-family: "Poppins", sans-serif;
                                                                     }
                                                                     
-                                                                    .product-info .select__size .color__list {
+                                                                    .admin-info .select__size .color__list {
                                                                         display: flex;
                                                                     }
                                                                     
-                                                                    .product-info .select__size .color__list li {
+                                                                    .admin-info .select__size .color__list li {
                                                                         margin-left: 15px;
                                                                     }
                                                                     
-                                                                    .product-info .select__size .color__list li a {
+                                                                    .admin-info .select__size .color__list li a {
                                                                         border-radius: 100%;
                                                                         display: inline-block;
                                                                         height: 30px;
@@ -4054,7 +4062,7 @@ Navigation Styles
                                                                         .onsale__thumb {
                                                                             text-align: center;
                                                                         }
-                                                                        .product-info {
+                                                                        .admin-info {
                                                                             padding-left: 0;
                                                                         }
                                                                         .addtocart-btn {
@@ -4087,7 +4095,7 @@ Navigation Styles
                                                                         .modal-product {
                                                                             flex-wrap: wrap;
                                                                         }
-                                                                        .product-info {
+                                                                        .admin-info {
                                                                             max-width: 100%;
                                                                             padding-left: 0;
                                                                         }
@@ -4106,12 +4114,12 @@ Navigation Styles
                                                                             font-size: 17px;
                                                                             padding: 0 53px;
                                                                         }
-                                                                        .product-info .select__color h2,
-                                                                        .product-info .select__size h2,
+                                                                        .admin-info .select__color h2,
+                                                                        .admin-info .select__size h2,
                                                                         h3.widget-title-modal {
                                                                             font-size: 13px;
                                                                         }
-                                                                        .product-info .select__color .color__list {
+                                                                        .admin-info .select__color .color__list {
                                                                             margin-left: 17px;
                                                                         }
                                                                     }
@@ -5635,18 +5643,18 @@ Navigation Styles
                                                                         margin: 0 0 3px;
                                                                     }
                                                                     
-                                                                    .product__info__main .product-info-stock-sku p {
+                                                                    .product__info__main .admin-info-stock-sku p {
                                                                         color: #616161;
                                                                         display: inline-block;
                                                                         font-size: 14px;
                                                                         text-transform: capitalize;
                                                                     }
                                                                     
-                                                                    .product__info__main .product-info-stock-sku p span {
+                                                                    .product__info__main .admin-info-stock-sku p span {
                                                                         color: #e59285;
                                                                     }
                                                                     
-                                                                    .product__info__main .product-info-stock-sku p+p {
+                                                                    .product__info__main .admin-info-stock-sku p+p {
                                                                         margin-left: 15px;
                                                                     }
                                                                     
@@ -7247,6 +7255,29 @@ Navigation Styles
                                                                         color: #e59285;
                                                                     }
                                                                     
+                                                                    .admin_sign_out {
+                                                                        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+                                                                        border: 2px solid rgb(255, 255, 255);
+                                                                        color: rgb(255, 255, 255);
+                                                                        display: inline-block;
+                                                                        font-size: 12px;
+                                                                        font-weight: 700;
+                                                                        line-height: 34px;
+                                                                        padding: 2px 20px 0;
+                                                                        text-transform: uppercase;
+                                                                        transition: all 0.4s ease 0s;
+                                                                    }
+                                                                    
+                                                                    .admin_sign_out:hover {
+                                                                        background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+                                                                        border-color: #e59285;
+                                                                        color: #e59285;
+                                                                    }
+                                                                    
+                                                                    .admin_sign_out_right {
+                                                                        float: right;
+                                                                    }
+                                                                    
                                                                     .account__form .form__btn span {
                                                                         color: #333;
                                                                         font-size: 12px;
@@ -7318,6 +7349,56 @@ Navigation Styles
                                                                         height: 40px;
                                                                         padding: 0 5px 0 10px;
                                                                         width: 60px;
+                                                                    }
+                                                                    
+                                                                    .table-content_admin_user table {
+                                                                        background: #fff none repeat scroll 0 0;
+                                                                        border-color: #eaeaea;
+                                                                        border-radius: 0;
+                                                                        border-style: solid;
+                                                                        border-width: 1px 0 0 1px;
+                                                                        text-align: center;
+                                                                        width: 100%;
+                                                                    }
+                                                                    
+                                                                    .table-content_admin_user table th {
+                                                                        border-top: medium none;
+                                                                        font-weight: bold;
+                                                                        padding: 20px 10px;
+                                                                        text-align: center;
+                                                                        text-transform: uppercase;
+                                                                        vertical-align: middle;
+                                                                        white-space: nowrap;
+                                                                    }
+                                                                    
+                                                                    .table-content_admin_user table th,
+                                                                    .table-content_admin_user table td {
+                                                                        border-bottom: 1px solid #eaeaea;
+                                                                        border-right: 1px solid #eaeaea;
+                                                                    }
+                                                                    
+                                                                    .table-content_admin_user table td {
+                                                                        border-top: medium none;
+                                                                        font-size: 13px;
+                                                                        padding: 10px 10px;
+                                                                        text-align: center;
+                                                                        vertical-align: middle;
+                                                                    }
+                                                                    
+                                                                    .table-content_admin_user td input {
+                                                                        background: #e5e5e5 none repeat scroll 0 0;
+                                                                        border: medium none;
+                                                                        border-radius: 3px;
+                                                                        color: #333;
+                                                                        font-size: 15px;
+                                                                        font-weight: normal;
+                                                                        height: 13px;
+                                                                        padding: 0 5px 0 10px;
+                                                                        width: 60px;
+                                                                    }
+                                                                    
+                                                                    .user-name a {
+                                                                        color: #e59285;
                                                                     }
                                                                     
                                                                     .table-content table td.product-subtotal {
@@ -7402,6 +7483,13 @@ Navigation Styles
                                                                     }
                                                                     
                                                                     .table-content table .title-top th {
+                                                                        background: #f6f6f6 none repeat scroll 0 0;
+                                                                        border-bottom: 1px solid transparent;
+                                                                        border-right: 1px solid transparent;
+                                                                        color: #333;
+                                                                    }
+                                                                    
+                                                                    .table-content_admin_user table .title-top th {
                                                                         background: #f6f6f6 none repeat scroll 0 0;
                                                                         border-bottom: 1px solid transparent;
                                                                         border-right: 1px solid transparent;
@@ -8110,6 +8198,16 @@ Navigation Styles
                                                                         border-bottom: 1px solid #2e2e2e;
                                                                         color: #2e2e2e;
                                                                         font-size: 16px;
+                                                                        margin-bottom: 20px;
+                                                                        padding-bottom: 10px;
+                                                                        position: relative;
+                                                                        text-transform: uppercase;
+                                                                    }
+                                                                    
+                                                                    .admin_title {
+                                                                        border-bottom: 1px solid #bfbfbf;
+                                                                        color: #2e2e2e;
+                                                                        font-size: 24px;
                                                                         margin-bottom: 20px;
                                                                         padding-bottom: 10px;
                                                                         position: relative;
