@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
@@ -48,7 +48,7 @@
                     <div class="col-lg-8 d-none d-lg-block">
                         <nav class="mainmenu__nav">
                             <ul class="meninmenu d-flex justify-content-start">
-                                <li class="drop with--one--item"><a href="index.hbs">Home</a></li>
+                                <li class="drop with--one--item"><a href="index.html">Home</a></li>
                                 <li class="drop"><a href="shop-grid.html">Books</a>
                                     <div class="megamenu mega03">
                                         <ul class="item item03">
@@ -78,7 +78,6 @@
                                     </div>
                                 </li>
                                 <li><a href="about.html">About Page</a></li>
-                                <li><a href="/admin_products">admin_products</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -143,7 +142,7 @@
         </header>
         <!-- //Header -->
         <!-- Start Search Popup -->
-        <div class="brown--color box-search-content search_active block-bg close__top">
+        <div class="box-search-content search_active block-bg close__top">
             <form id="search_mini_form" class="minisearch" action="#">
                 <div class="field__search">
                     <input type="text" placeholder="Search entire store here...">
@@ -157,114 +156,150 @@
             </div>
         </div>
         <!-- End Search Popup -->
-        <!-- Start Slider area -->
-        <div class="slider-area brown__nav slider--15 slide__activation slide__arrow01 owl-carousel owl-theme">
-            <!-- Start Single Slide -->
-            <div class="slide animation__style10 bg-image--1 fullscreen align__center--left">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="slider__content">
-                                <div class="contentbox">
-                                    <h2>Buy <span>your </span></h2>
-                                    <h2>favourite <span>Book </span></h2>
-                                    <h2>from <span>Here </span></h2>
-                                    <a class="shopbtn" href="#">shop now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Slide -->
-            <!-- Start Single Slide -->
-            <div class="slide animation__style10 bg-image--7 fullscreen align__center--left">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="slider__content">
-                                <div class="contentbox">
-                                    <h2>Buy <span>your </span></h2>
-                                    <h2>favourite <span>Book </span></h2>
-                                    <h2>from <span>Here </span></h2>
-                                    <a class="shopbtn" href="#">shop now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Slide -->
-        </div>
-        <!-- End Slider area -->
-        <!-- Start BEst Seller Area -->
-        <section class="wn__product__area brown--color pt--80  pb--30">
+        <!-- Start Bradcaump area -->
+        <div class="ht__bradcaump__area">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="section__title text-center">
-                            <h2 class="title__be--2">New <span class="color--theme">Products</span></h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form</p>
+                        <div class="bradcaump__inner text-center">
+                            <!-- <h2 class="bradcaump-title">About us</h2>
+                            <nav class="bradcaump-content">
+                                <a class="breadcrumb_item" href="index.html">Home</a>
+                                <span class="brd-separetor">/</span>
+                                <span class="breadcrumb_item active">About us</span>
+                            </nav> -->
                         </div>
                     </div>
                 </div>
-                <!-- Start Single Tab Content -->
-                <div class="furniture--4 border--round arrows_style owl-carousel owl-theme row mt--50">
-                    <!-- Start Single Product -->
-                    {{#each books}}
-                    <div class="product product__style--3">
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="product__thumb">
-                                <a class="first__img" href="/single-product/{{this.idBook}}/"><img src="images/books/{{this.idBook}}.jpg" alt="product image"></a>
-                                <a class="second__img animation1" href="/single-product/{{this.idBook}}/"><img src="images/books/{{this.idBook}}.jpg" alt="product image"></a>
-                                <div class="hot__box">
-                                    <span class="hot-label">NEW</span>
-                                </div>
-                            </div>
-                            <div class="product__content content--center">
-                                <h4><a href="/edit/{{this.idBook}}">{{this.Title}}</a></h4>
-                                <ul class="prize d-flex"> 
-                                    <li>${{this.Price}}</li>
-                                    <!-- <li class="old_prize">$35.00</li> -->
-                                </ul>
-                                <div class="action">
-                                    <div class="actions_inner">
-                                        <ul class="add_to_links">
-                                            <li><a class="cart" href="cart.html"><i class="bi bi-shopping-cart-full"></i></a></li>
-                                            <li><a class="wishlist" href="wishlist.html"><i class="bi bi-heart-beat"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-                    {{/each }}
-                    <!-- Start Single Product -->
-                </div>
-                <!-- End Single Tab Content -->
             </div>
-        </section>
-        <!-- Start BEst Seller Area -->
-        <!-- Start NEwsletter Area -->
-        <section class="wn__newsletter__area bg-image--2">
+        </div>
+        <!-- End Bradcaump area -->
+        <!-- Start About Area -->
+        <div class="page-about about_area bg--white section-padding--lg">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-7 offset-lg-5 col-md-12 col-12 ptb--150">
-                        <div class="section__title text-center">
-                            <h2>Stay With Us</h2>
+                    <div class="col-lg-12">
+                        <div class="section__title--3 text-center pb--30">
+                            <h2>Our Process Skill Of High</h2>
+                            <p>the right people for your project</p>
                         </div>
-                        <div class="newsletter__block text-center">
-                            <p>Subscribe to our newsletters now and stay up-to-date with new collections, the latest lookbooks and exclusive offers.</p>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-sm-12 col-12">
+                        <div class="content text-left text_style--2">
+                            <h2>we have skills to show</h2>
+                            <div class="skill-container">
+                                <!-- Start single skill -->
+                                <div class="single-skill">
+                                    <p>Customer Favorites</p>
+                                    <div class="progress">
+                                        <div class="progress-bar wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay=".5s" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%"><span class="pen-lable"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End single skill -->
+                                <!-- Start single skill -->
+                                <div class="single-skill">
+                                    <p>Popular Authors</p>
+                                    <div class="progress">
+                                        <div class="progress-bar wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay=".5s" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width:95%"><span class="pen-lable"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End single skill -->
+                                <!-- Start single skill -->
+                                <div class="single-skill">
+                                    <p>Bestselling Series</p>
+                                    <div class="progress">
+                                        <div class="progress-bar wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay=".5s" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" style="width:93%"><span class="pen-lable"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End single skill -->
+                                <!-- Start single skill -->
+                                <div class="single-skill">
+                                    <p>Bargain Books</p>
+                                    <div class="progress">
+                                        <div class="progress-bar wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay=".5s" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%"><span class="pen-lable"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End single skill -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 col-12">
+                        <div class="content">
+                            <h3>Buy Book</h3>
+                            <h2>Different Knowledge</h2>
+                            <p class="mt--20 mb--20">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima
+                                et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.</p>
+                            <strong>Address</strong>
+                            <p>sdfghjk</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- End About Area -->
+        <!-- Start Team Area -->
+        <section class="wn__team__area pb--75 bg--white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section__title--3 text-center">
+                            <h2>Meet our team of experts</h2>
+                            <p>the right people for your project</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <!-- Start Single Team -->
+                    <div class="col-lg-6 col-12">
+                        <div class="wn__team">
+                            <div class="thumb">
+                                <img src="images/about/team/2.jpg" alt="Team images">
+                            </div>
+                            <div class="content text-center">
+                                <h4>Горошко</h4>
+                                <p>Co-Founder</p>
+                                <ul class="team__social__net">
+                                    <li><a href="#"><i class="icon-social-twitter icons"></i></a></li>
+                                    <li><a href="#"><i class="icon-social-tumblr icons"></i></a></li>
+                                    <li><a href="#"><i class="icon-social-facebook icons"></i></a></li>
+                                    <li><a href="#"><i class="icon-social-linkedin icons"></i></a></li>
+                                    <li><a href="#"><i class="icon-social-pinterest icons"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Team -->
+                    <!-- Start Single Team -->
+                    <div class="col-lg-6 col-12">
+                        <div class="wn__team">
+                            <div class="thumb">
+                                <img src="images/about/team/3.jpg" alt="Team images">
+                            </div>
+                            <div class="content text-center">
+                                <h4>Буйницкая</h4>
+                                <p>Co-Founder</p>
+                                <ul class="team__social__net">
+                                    <li><a href="#"><i class="icon-social-twitter icons"></i></a></li>
+                                    <li><a href="#"><i class="icon-social-tumblr icons"></i></a></li>
+                                    <li><a href="#"><i class="icon-social-facebook icons"></i></a></li>
+                                    <li><a href="#"><i class="icon-social-linkedin icons"></i></a></li>
+                                    <li><a href="#"><i class="icon-social-pinterest icons"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Team -->
+                </div>
+            </div>
         </section>
-        <!-- End NEwsletter Area -->
-
-        <!-- Start BEst Seller Area -->
-
-
+        <!-- End Team Area -->
         <!-- Footer Area -->
         <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
             <div class="footer-static-top">
@@ -290,8 +325,10 @@
     </div>
     <!-- //Main wrapper -->
 
+
+
     <!-- JS Files -->
-    <script src="js/cart.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

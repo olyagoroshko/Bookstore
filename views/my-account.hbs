@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Home | Bookshop Responsive Bootstrap4 Template</title>
+    <title>Shop-Single | Bookshop Responsive Bootstrap4 Template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -48,7 +48,7 @@
                     <div class="col-lg-8 d-none d-lg-block">
                         <nav class="mainmenu__nav">
                             <ul class="meninmenu d-flex justify-content-start">
-                                <li class="drop with--one--item"><a href="index.hbs">Home</a></li>
+                                <li class="drop with--one--item"><a href="index.html">Home</a></li>
                                 <li class="drop"><a href="shop-grid.html">Books</a>
                                     <div class="megamenu mega03">
                                         <ul class="item item03">
@@ -78,7 +78,6 @@
                                     </div>
                                 </li>
                                 <li><a href="about.html">About Page</a></li>
-                                <li><a href="/admin_products">admin_products</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -143,7 +142,7 @@
         </header>
         <!-- //Header -->
         <!-- Start Search Popup -->
-        <div class="brown--color box-search-content search_active block-bg close__top">
+        <div class="box-search-content search_active block-bg close__top">
             <form id="search_mini_form" class="minisearch" action="#">
                 <div class="field__search">
                     <input type="text" placeholder="Search entire store here...">
@@ -157,114 +156,27 @@
             </div>
         </div>
         <!-- End Search Popup -->
-        <!-- Start Slider area -->
-        <div class="slider-area brown__nav slider--15 slide__activation slide__arrow01 owl-carousel owl-theme">
-            <!-- Start Single Slide -->
-            <div class="slide animation__style10 bg-image--1 fullscreen align__center--left">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="slider__content">
-                                <div class="contentbox">
-                                    <h2>Buy <span>your </span></h2>
-                                    <h2>favourite <span>Book </span></h2>
-                                    <h2>from <span>Here </span></h2>
-                                    <a class="shopbtn" href="#">shop now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Slide -->
-            <!-- Start Single Slide -->
-            <div class="slide animation__style10 bg-image--7 fullscreen align__center--left">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="slider__content">
-                                <div class="contentbox">
-                                    <h2>Buy <span>your </span></h2>
-                                    <h2>favourite <span>Book </span></h2>
-                                    <h2>from <span>Here </span></h2>
-                                    <a class="shopbtn" href="#">shop now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Single Slide -->
-        </div>
-        <!-- End Slider area -->
-        <!-- Start BEst Seller Area -->
-        <section class="wn__product__area brown--color pt--80  pb--30">
+        <!-- Start Bradcaump area -->
+        <div class="ht__bradcaump__area">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="section__title text-center">
-                            <h2 class="title__be--2">New <span class="color--theme">Products</span></h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Start Single Tab Content -->
-                <div class="furniture--4 border--round arrows_style owl-carousel owl-theme row mt--50">
-                    <!-- Start Single Product -->
-                    {{#each books}}
-                    <div class="product product__style--3">
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                            <div class="product__thumb">
-                                <a class="first__img" href="/single-product/{{this.idBook}}/"><img src="images/books/{{this.idBook}}.jpg" alt="product image"></a>
-                                <a class="second__img animation1" href="/single-product/{{this.idBook}}/"><img src="images/books/{{this.idBook}}.jpg" alt="product image"></a>
-                                <div class="hot__box">
-                                    <span class="hot-label">NEW</span>
-                                </div>
-                            </div>
-                            <div class="product__content content--center">
-                                <h4><a href="/edit/{{this.idBook}}">{{this.Title}}</a></h4>
-                                <ul class="prize d-flex"> 
-                                    <li>${{this.Price}}</li>
-                                    <!-- <li class="old_prize">$35.00</li> -->
-                                </ul>
-                                <div class="action">
-                                    <div class="actions_inner">
-                                        <ul class="add_to_links">
-                                            <li><a class="cart" href="cart.html"><i class="bi bi-shopping-cart-full"></i></a></li>
-                                            <li><a class="wishlist" href="wishlist.html"><i class="bi bi-heart-beat"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-                    {{/each }}
-                    <!-- Start Single Product -->
-                </div>
-                <!-- End Single Tab Content -->
-            </div>
-        </section>
-        <!-- Start BEst Seller Area -->
-        <!-- Start NEwsletter Area -->
-        <section class="wn__newsletter__area bg-image--2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7 offset-lg-5 col-md-12 col-12 ptb--150">
-                        <div class="section__title text-center">
-                            <h2>Stay With Us</h2>
-                        </div>
-                        <div class="newsletter__block text-center">
-                            <p>Subscribe to our newsletters now and stay up-to-date with new collections, the latest lookbooks and exclusive offers.</p>
+                        <div class="bradcaump__inner text-center">
+                            <!-- <h2 class="bradcaump-title">My Account</h2>
+                            <nav class="bradcaump-content">
+                                <a class="breadcrumb_item" href="index.html">Home</a>
+                                <span class="brd-separetor">/</span>
+                                <span class="breadcrumb_item active">My Account</span>
+                            </nav> -->
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- End NEwsletter Area -->
+        </div>
+        <!-- End Bradcaump area -->
+        <!-- Start My Account Area -->
 
-        <!-- Start BEst Seller Area -->
-
-
+        <!-- End My Account Area -->
         <!-- Footer Area -->
         <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
             <div class="footer-static-top">
@@ -291,7 +203,7 @@
     <!-- //Main wrapper -->
 
     <!-- JS Files -->
-    <script src="js/cart.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

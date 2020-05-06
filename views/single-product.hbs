@@ -30,10 +30,7 @@
 </head>
 
 <body>
-    <!--[if lte IE 9]>
-		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-	<![endif]-->
-
+   
     <!-- Main wrapper -->
     <div class="wrapper" id="wrapper">
 
@@ -269,26 +266,28 @@
                                         <h6>{{this.Text}}</h6><br/>
                                         {{/each}}
                                     </div>
-                                    <div class="review-fieldset">
-                                        <h2>Your review:</h2>                                        
-                                        <div class="review_form_field">
-                                            <div class="input__box">
-                                                <span>Nickname</span>
-                                                <input id="nickname_field" type="text" name="nickname">
-                                            </div>
-                                            <div class="input__box">
-                                                <span>Summary</span>
-                                                <input id="summery_field" type="text" name="summery">
-                                            </div>
-                                            <div class="input__box">
-                                                <span>Review</span>
-                                                <textarea name="review"></textarea>
-                                            </div>
-                                            <div class="review-form-actions">
-                                                <button>Submit Review</button>
+                                    <form method="POST">
+                                        <div class="review-fieldset">
+                                            <h2>Your review:</h2>                                        
+                                            <div class="review_form_field">
+                                                <div class="input__box">
+                                                    <span>Nickname</span>
+                                                    <input id="nickname" type="text" name="nickname">
+                                                </div>
+                                                <div class="input__box">
+                                                    <span>Summary</span>
+                                                    <input id="summary" type="text" name="summary">
+                                                </div>
+                                                <div class="input__box">
+                                                    <span>Review</span>
+                                                    <textarea id="text" name="text"></textarea>
+                                                </div>
+                                                <div class="form__btn">
+                                                    <button>Submit Review</button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                                 <!-- End Single Tab Content -->
                             </div>
