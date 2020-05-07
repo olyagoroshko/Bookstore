@@ -114,7 +114,7 @@
                         <h2 class="admin_title">Users</h2>
                     </div>
                     <div class="admin_delete_button">
-                        <button class="admin_delete">Delete</button>
+                        {{!-- <button class="admin_delete">Delete</button> --}}
                     </div>
                 </div>
 
@@ -127,44 +127,27 @@
                                 <table>
                                     <thead>
                                         <tr class="title-top">
-                                            <th class="user-checkbox"><input type="checkbox"></th>
+                                            <th class="user-checkbox"></th>
                                             <th class="user-name">Name</th>
                                             <th class="user-email">E-mail</th>
                                             <th class="user-phone">Phone</th>
                                             <th class="user-address">Address</th>
-                                            <th class="user-type">Type</th>
+                                      
 
                                         </tr>
                                     </thead>
+                                    {{#each customers}}
                                     <tbody>
                                         <tr>
-                                            <td class="user-checkbox"><input type="checkbox"></td>
-                                            <td class="user-name">
-                                                <a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link" href="#productmodal">Name</a></td>
-                                            <td class="user-email">E-mail</td>
-                                            <td class="user-phone">Phone</td>
-                                            <td class="user-address">Address</td>
-                                            <td class="user-type">Type</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="user-checkbox"><input type="checkbox"></td>
-                                            <td class="user-name">
-                                                <a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link" href="#productmodal">Name</a></td>
-                                            <td class="user-email">E-mail</td>
-                                            <td class="user-phone">Phone</td>
-                                            <td class="user-address">Address</td>
-                                            <td class="user-type">Type</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="user-checkbox"><input type="checkbox"></td>
-                                            <td class="user-name">
-                                                <a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link" href="#productmodal">Name</a></td>
-                                            <td class="user-email">E-mail</td>
-                                            <td class="user-phone">Phone</td>
-                                            <td class="user-address">Address</td>
-                                            <td class="user-type">Type</td>
-                                        </tr>
+                                            <td class="product-remove"><a href="delete_user/{{this.idCustomer}}" class="btn-remove">X</a></td>
+                                            <td class="user-name">{{this.FCustName}} {{this.LCustName}}</td>
+                                            <td class="user-email">{{this.Email}}</td>
+                                            <td class="user-phone">{{this.Phone}}</td>
+                                            <td class="user-address">{{this.Address}}</td>
+                                            </tr>
                                     </tbody>
+                                    {{/each}}
+
                                 </table>
                             </div>
                         </form>

@@ -300,6 +300,23 @@ app.post('/add-product', urlencodedParser, (req, res) => {
     });
 });
 
+app.get('/admin_users', (req, res) => {
+    pool.query('SELECT * FROM customers', (err, rows, fields) => {
+        if (err) return console.log(err);
+        res.render("admin_users.hbs", {
+            customers: rows
+        });
+    });
+});
+
+app.get('/delete_user/:id', (req, res) => {
+    const id = req.params.id;
+    pool.query("DELETE FROM customers WHERE idCustomer = ?", [id], function(err, rows) {
+        if (err) return console.log(err);
+        res.redirect("/admin_users");
+    });
+});
+
 app.get('/wishlist', (req, res) => {
     res.render('wishlist.hbs');
 });
@@ -326,10 +343,6 @@ app.get('/checkout', (req, res) => {
 
 app.get('/cart', (req, res) => {
     res.render('cart.hbs');
-});
-
-app.get('/admin_users', (req, res) => {
-    res.render('admin_users.hbs');
 });
 
 app.get('/admin_orders', (req, res) => {
