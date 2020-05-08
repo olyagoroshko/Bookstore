@@ -346,12 +346,37 @@ app.post('/register', urlencodedParser, (req, res) => {
     });
 });
 
-app.get('/wishlist', (req, res) => {
-    res.render('wishlist.hbs');
+app.get('/my-account/:id', (req, res) => {
+    const id = req.params.id;
+    pool.query("SELECT * FROM customers WHERE idCustomer = ?", [id], (err, result) => {
+        if (err) return console.log(err);
+        res.render("my-account.hbs", {
+            customers: result[0]
+        });
+    });
+});
+app.post("/my-account/:id", urlencodedParser, function(req, res) {
+    if (!req.body) return res.sendStatus(400);
+    const idCustomer = req.params.id;
+    const FCustName = req.body.FCustName;
+    const LCustName = req.body.LCustName;
+    const Phone = req.body.Phone;
+    const Email = req.body.Email;
+    const CardNum = req.body.CardNum;
+    const Passwd = req.body.Passwd;
+    const Address = req.body.Address;
+    
+    pool.query("UPDATE customers SET FCustName=?, LCustName=?, Phone=?, Email=?, CardNum=?, Passwd=SHA1(?), Address=? WHERE idCustomer=?;",
+     [FCustName, LCustName, Phone, Email, CardNum, Passwd, Address, idCustomer],
+      function(err, data) {
+        if (err) return console.log(err);
+        res.redirect(idCustomer);
+    });
 });
 
-app.get('/my-account', (req, res) => {
-    res.render('my-account.hbs');
+
+app.get('/wishlist', (req, res) => {
+    res.render('wishlist.hbs');
 });
 
 app.get('/login', (req, res) => {
