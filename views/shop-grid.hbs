@@ -14,7 +14,8 @@
 
     <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
     <!-- Stylesheets -->
@@ -82,7 +83,9 @@
                             <li class="wishlist">
                                 <a href="/wishlist"></a>
                             </li>
-                            <li class="shopcart"><a href="/cart"><span class="product_qun">0</span></a>
+                            <li class="shopcart">
+                                <a href="/cart">
+                                <span class="product_qun">0</span></a>
                             </li>
                             <li class="setting__bar__icon">
                                 <a class="setting__active" href="#"></a>
@@ -90,8 +93,8 @@
                                     <div class="content-inner">
                                         <div class="switcher-currency">
                                             <strong class="label switcher-label">
-												<span>My Account</span>
-											</strong>
+                                                <span>My Account</span>
+                                            </strong>
                                             <div class="switcher-options">
                                                 <div class="switcher-currency-trigger">
                                                     <div class="setting__menu">
@@ -225,12 +228,15 @@
                     <div class="col-lg-9 col-12 order-1 order-lg-2">
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between">
+                                <div
+                                    class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between">
                                     <div class="shop__list nav justify-content-center" role="tablist">
-                                        <a class="nav-item nav-link active" data-toggle="tab" href="#nav-grid" role="tab"><i class="fa fa-th"></i></a>
-                                        <a class="nav-item nav-link" data-toggle="tab" href="#nav-list" role="tab"><i class="fa fa-list"></i></a>
+                                        <a class="nav-item nav-link active" data-toggle="tab" href="#nav-grid"
+                                            role="tab"><i class="fa fa-th"></i></a>
+                                        <a class="nav-item nav-link" data-toggle="tab" href="#nav-list" role="tab"><i
+                                                class="fa fa-list"></i></a>
                                     </div>
-                                   <!-- <p>Showing 1–12 of 40 results</p>
+                                    <!-- <p>Showing 1–12 of 40 results</p>
                                     <div class="orderby__wrapper">
                                         <span>Sort By</span>
                                         <select class="shot__byselect">
@@ -248,8 +254,11 @@
                                     <!-- Start Single Product -->
                                     <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
                                         <div class="product__thumb">
-                                            <a class="first__img" href="/single-product/{{this.idBook}}/"><img src="images/books/{{this.idBook}}.jpg" alt="product image"></a>
-                                            <a class="second__img animation1" href="/single-product/{{this.idBook}}/"><img src="images/books/{{this.idBook}}.jpg" alt="product image"></a>
+                                            <a class="first__img" href="/single-product/{{this.idBook}}/"><img
+                                                    src="images/books/{{this.idBook}}.jpg" alt="product image"></a>
+                                            <a class="second__img animation1"
+                                                href="/single-product/{{this.idBook}}/"><img
+                                                    src="images/books/{{this.idBook}}.jpg" alt="product image"></a>
                                             <div class="hot__box">
                                                 <!--<span class="hot-label">BEST SALLER</span>-->
                                             </div>
@@ -263,8 +272,10 @@
                                             <div class="action">
                                                 <div class="actions_inner">
                                                     <ul class="add_to_links">
-                                                        <li><a class="cart" href="/cart"><i class="bi bi-shopping-cart-full"></i></a></li>
-                                                        <li><a class="wishlist" href="/wishlist"><i class="bi bi-heart-beat"></i></a></li>
+                                                        <li><a class="cart" href=""><i
+                                                                    class="bi bi-shopping-cart-full"></i></a></li>
+                                                        <li><a class="wishlist" href="/wishlist"><i
+                                                                    class="bi bi-heart-beat"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -281,13 +292,15 @@
                                     <li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
                                 </ul>-->
                             </div>
-                            <div class="shop-grid tab-pane fade" id="nav-list" role="tabpanel">
+                            {{!-- <div class="shop-grid tab-pane fade" id="nav-list" role="tabpanel">
                                 <div class="list__view__wrapper">
                                     <!-- Start Single Product -->
                                     <div class="list__view">
                                         <div class="thumb">
-                                            <a class="first__img" href="single-product.html"><img src="images/product/1.jpg" alt="product images"></a>
-                                            <a class="second__img animation1" href="single-product.html"><img src="images/product/2.jpg" alt="product images"></a>
+                                            <a class="first__img" href="single-product.html"><img
+                                                    src="images/product/1.jpg" alt="product images"></a>
+                                            <a class="second__img animation1" href="single-product.html"><img
+                                                    src="images/product/2.jpg" alt="product images"></a>
                                         </div>
                                         <div class="content">
                                             <h2><a href="single-product.html">Ali Smith</a></h2>
@@ -303,7 +316,9 @@
                                                 <li>$111.00</li>
                                                 <li class="old__prize">$220.00</li>
                                             </ul>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi,
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla
+                                                augue nec est tristique auctor. Donec non est at libero vulputate
+                                                rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi,
                                                 vulputate adipiscing cursus eu, suscipit id nulla.</p>
                                             <ul class="cart__action d-flex">
                                                 <li class="cart"><a href="/cart">Add to cart</a></li>
@@ -319,8 +334,10 @@
                                     <!-- Start Single Product -->
                                     <div class="list__view mt--40">
                                         <div class="thumb">
-                                            <a class="first__img" href="single-product.html"><img src="images/product/2.jpg" alt="product images"></a>
-                                            <a class="second__img animation1" href="single-product.html"><img src="images/product/4.jpg" alt="product images"></a>
+                                            <a class="first__img" href="single-product.html"><img
+                                                    src="images/product/2.jpg" alt="product images"></a>
+                                            <a class="second__img animation1" href="single-product.html"><img
+                                                    src="images/product/4.jpg" alt="product images"></a>
                                         </div>
                                         <div class="content">
                                             <h2><a href="single-product.html">Blood In Water</a></h2>
@@ -336,7 +353,9 @@
                                                 <li>$111.00</li>
                                                 <li class="old__prize">$220.00</li>
                                             </ul>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi,
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla
+                                                augue nec est tristique auctor. Donec non est at libero vulputate
+                                                rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi,
                                                 vulputate adipiscing cursus eu, suscipit id nulla.</p>
                                             <ul class="cart__action d-flex">
                                                 <li class="cart"><a href="/cart">Add to cart</a></li>
@@ -352,8 +371,10 @@
                                     <!-- Start Single Product -->
                                     <div class="list__view mt--40">
                                         <div class="thumb">
-                                            <a class="first__img" href="single-product.html"><img src="images/product/3.jpg" alt="product images"></a>
-                                            <a class="second__img animation1" href="single-product.html"><img src="images/product/6.jpg" alt="product images"></a>
+                                            <a class="first__img" href="single-product.html"><img
+                                                    src="images/product/3.jpg" alt="product images"></a>
+                                            <a class="second__img animation1" href="single-product.html"><img
+                                                    src="images/product/6.jpg" alt="product images"></a>
                                         </div>
                                         <div class="content">
                                             <h2><a href="single-product.html">Madeness Overated</a></h2>
@@ -369,7 +390,9 @@
                                                 <li>$111.00</li>
                                                 <li class="old__prize">$220.00</li>
                                             </ul>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi,
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla
+                                                augue nec est tristique auctor. Donec non est at libero vulputate
+                                                rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi,
                                                 vulputate adipiscing cursus eu, suscipit id nulla.</p>
                                             <ul class="cart__action d-flex">
                                                 <li class="cart"><a href="/cart">Add to cart</a></li>
@@ -385,8 +408,10 @@
                                     <!-- Start Single Product -->
                                     <div class="list__view mt--40">
                                         <div class="thumb">
-                                            <a class="first__img" href="single-product.html"><img src="images/product/4.jpg" alt="product images"></a>
-                                            <a class="second__img animation1" href="single-product.html"><img src="images/product/6.jpg" alt="product images"></a>
+                                            <a class="first__img" href="single-product.html"><img
+                                                    src="images/product/4.jpg" alt="product images"></a>
+                                            <a class="second__img animation1" href="single-product.html"><img
+                                                    src="images/product/6.jpg" alt="product images"></a>
                                         </div>
                                         <div class="content">
                                             <h2><a href="single-product.html">Watching You</a></h2>
@@ -402,7 +427,9 @@
                                                 <li>$111.00</li>
                                                 <li class="old__prize">$220.00</li>
                                             </ul>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi,
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla
+                                                augue nec est tristique auctor. Donec non est at libero vulputate
+                                                rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi,
                                                 vulputate adipiscing cursus eu, suscipit id nulla.</p>
                                             <ul class="cart__action d-flex">
                                                 <li class="cart"><a href="/cart">Add to cart</a></li>
@@ -418,8 +445,10 @@
                                     <!-- Start Single Product -->
                                     <div class="list__view mt--40">
                                         <div class="thumb">
-                                            <a class="first__img" href="single-product.html"><img src="images/product/5.jpg" alt="product images"></a>
-                                            <a class="second__img animation1" href="single-product.html"><img src="images/product/9.jpg" alt="product images"></a>
+                                            <a class="first__img" href="single-product.html"><img
+                                                    src="images/product/5.jpg" alt="product images"></a>
+                                            <a class="second__img animation1" href="single-product.html"><img
+                                                    src="images/product/9.jpg" alt="product images"></a>
                                         </div>
                                         <div class="content">
                                             <h2><a href="single-product.html">Court Wings Run</a></h2>
@@ -435,7 +464,9 @@
                                                 <li>$111.00</li>
                                                 <li class="old__prize">$220.00</li>
                                             </ul>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi,
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla
+                                                augue nec est tristique auctor. Donec non est at libero vulputate
+                                                rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi,
                                                 vulputate adipiscing cursus eu, suscipit id nulla.</p>
                                             <ul class="cart__action d-flex">
                                                 <li class="cart"><a href="/cart">Add to cart</a></li>
@@ -448,7 +479,7 @@
                                     </div>
                                     <!-- End Single Product -->
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -466,7 +497,8 @@
                                     <a href="/">
                                         <img src="images/logo/3.png" alt="logo">
                                     </a>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                        have suffered duskam alteration variations of passages</p>
                                 </div>
 
                             </div>
@@ -481,7 +513,7 @@
     <!-- //Main wrapper -->
 
     <!-- JS Files -->
-    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
