@@ -2,6 +2,7 @@ const mysql = require("mysql");
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
+var fs = require('fs');
 const app = express();
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -40,17 +41,17 @@ app.get("/shop-grid", function(req, res) {
     res.render("shop-grid.hbs");
 });
 
-app.get("/single-product/:id", function(req, res) {
-    const id = req.params.id;
-    pool.query("SELECT b.Title, b.idBook, b.Description, b.IsInStore, b.Price, b.Year, g.Genre, a.FName, a.LName, p.PubName, r.Summary, r.Text, r.Nickname FROM books b INNER JOIN genres g ON b.idGen=g.idGenre INNER JOIN authors a ON b.idAuth=a.idAuthor INNER JOIN publishers p ON b.idPub=p.idPublisher INNER JOIN reviews r ON b.idBook=r.idBook WHERE b.idBook=?;", [id], function(err, rows) {
-        if (err) return console.log(err);
-        res.render("single-product.hbs", {
-            books: rows[0],
-            genres: rows[0],
-            authors: rows[0],
-            publishers: rows[0],
-            reviews: rows
-        });
+app.get("/single-product/:id", function(req, res){
+    const idBook = req.params.id;
+    pool.query("SELECT b.Title, b.idBook, b.Description, b.IsInStore, b.Price, b.Year, g.Genre, a.FName, a.LName, p.PubName, r.Summary, r.Text, r.Nickname FROM books b LEFT JOIN genres g ON b.idGen=g.idGenre LEFT JOIN authors a ON b.idAuth=a.idAuthor LEFT JOIN publishers p ON b.idPub=p.idPublisher LEFT JOIN reviews r ON b.idBook=r.idBook WHERE b.idBook=?;", [idBook], function(err, rows) {
+      if(err) return console.log(err);
+       res.render("single-product.hbs", {
+          books: rows[0],
+          genres: rows[0],
+          authors: rows[0],
+          publishers: rows[0], 
+          reviews: rows
+      });
     });
 });
 
@@ -309,7 +310,7 @@ app.get('/admin_users', (req, res) => {
     });
 });
 
-app.get('/delete_user/:id', (req, res) => {
+app.get('/delete_user/:id', (req, res) => {//поменять на ПОСТ
     const id = req.params.id;
     pool.query("DELETE FROM customers WHERE idCustomer = ?", [id], function(err, rows) {
         if (err) return console.log(err);
@@ -317,12 +318,36 @@ app.get('/delete_user/:id', (req, res) => {
     });
 });
 
-app.get('/wishlist', (req, res) => {
-    res.render('wishlist.hbs');
-});
-
 app.get('/register', (req, res) => {
     res.render('register.hbs');
+});
+
+app.post('/register', urlencodedParser, (req, res) => {
+    if (!req.body) return res.sendStatus(400);
+    const idCustomer = null;
+    const FCustName = req.body.FCustName;
+    const LCustName = req.body.LCustName;
+    const Phone = req.body.Phone;
+    const Email = req.body.Email;
+    const CardNum = req.body.CardNum;
+    const Passwd = req.body.Passwd;
+
+    const Street = req.body.Street;
+    const City = req.body.City;
+    const HouseNum = req.body.HouseNum;
+    const ApartmentNum = req.body.ApartmentNum;
+    const Postcode = req.body.Postcode;
+
+    //console.log(Passwd);
+    //console.log(idCustomer, FCustName, LCustName, Phone, Email, CardNum, Passwd);
+    pool.query("INSERT INTO customers (idCustomer, FCustName, LCustName, Address, Phone, Email, CardNum, Passwd) VALUES (?, ?, ?, concat(?,',',?,',',?,',',?,',',?), ?, ?, ?, SHA1(?))", [idCustomer, FCustName, LCustName, Street, City, HouseNum, ApartmentNum, Postcode, Phone, Email, CardNum, Passwd], function(err, rows) {
+        if (err) return console.log(err);
+        res.redirect("/");
+    });
+});
+
+app.get('/wishlist', (req, res) => {
+    res.render('wishlist.hbs');
 });
 
 app.get('/my-account', (req, res) => {
