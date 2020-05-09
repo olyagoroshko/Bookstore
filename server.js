@@ -37,10 +37,6 @@ app.get("/", function(req, res) {
     });
 });
 
-app.get("/shop-grid", function(req, res) {
-    res.render("shop-grid.hbs");
-});
-
 app.get("/single-product/:id", function(req, res){
     const idBook = req.params.id;
     pool.query("SELECT b.Title, b.idBook, b.Description, b.IsInStore, b.Price, b.Year, g.Genre, a.FName, a.LName, p.PubName, r.Summary, r.Text, r.Nickname FROM books b LEFT JOIN genres g ON b.idGen=g.idGenre LEFT JOIN authors a ON b.idAuth=a.idAuthor LEFT JOIN publishers p ON b.idPub=p.idPublisher LEFT JOIN reviews r ON b.idBook=r.idBook WHERE b.idBook=?;", [idBook], function(err, rows) {
@@ -69,20 +65,20 @@ app.post('/single-product/:id', urlencodedParser, function(req, res) {
     });
 });
 
-app.get("/shop-grid", function(req, res) {
+app.get("/shop-grid", function (req, res){
     let from = req.query.from;
     let to = req.query.to;
-    if (from == null) from = 0;
-    if (to == null) to = 500;
-    // console.log(from);
-    // console.log(to);
-    pool.query("SELECT * FROM BOOKS WHERE Price BETWEEN ? AND ? ;", [from, to], function(err, rows) {
-        if (err) return console.log(err);
-        res.render("shop-grid.hbs", {
-            books: rows
-        });
+    if (from == null) from=0;
+    if (to == null) to=500;  
+   // console.log(from);
+   // console.log(to);
+    pool.query("SELECT * FROM books WHERE Price BETWEEN ? AND ? ;", [from, to], function(err, rows) {
+      if(err) return console.log(err);
+      res.render("shop-grid.hbs", {
+        books: rows
+      });
     });
-});
+  });
 
 app.get("/shop-grid-biography", function(req, res) {
     let from = req.query.from;

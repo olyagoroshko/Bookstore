@@ -2838,7 +2838,7 @@ Header Styles
     visibility: hidden;
     width: 720px;
     z-index: 3000;
-    padding: 25px 0;
+    padding: 15px 0;
 }
 
 .meninmenu li.drop .megamenu.mega02 {
@@ -2846,7 +2846,7 @@ Header Styles
 }
 
 .meninmenu li.drop .megamenu.mega03 {
-    width: 720px;
+    width: 500px;
 }
 
 .meninmenu li.drop .megamenu.mega04 {
@@ -2866,7 +2866,7 @@ Header Styles
 }
 
 .meninmenu li.drop .megamenu .item.item03 {
-    flex-basis: 33.33%;
+    flex-basis: 50%;
 }
 
 .meninmenu li.drop .megamenu .item.item04 {
@@ -2987,6 +2987,15 @@ Header Styles
     right: 0;
     top: 0px;
     z-index: 9;
+    background-color: #000;
+}
+
+.header__absolute__main {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    z-index: 9;
 }
 
 
@@ -3084,6 +3093,10 @@ Header Styles
 }
 
 .mainmenu__nav .meninmenu li.drop .megamenu .item>li.title {
+    padding-left: 0;
+}
+
+.mainmenu__nav .meninmenu li.drop .megamenu .item1>li.title {
     padding-left: 0;
 }
 
@@ -8651,7 +8664,7 @@ a.checkout__title {
 
 .price--output input {
     border: 0 none;
-    width: 30px;
+    width: 25px;
 }
 
 .price--output span {

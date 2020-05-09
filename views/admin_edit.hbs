@@ -14,7 +14,8 @@
 
     <!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 
     <!-- Stylesheets -->
@@ -30,7 +31,7 @@
 </head>
 
 <body>
- 
+
 
     <!-- Main wrapper -->
     <div class="wrapper" id="wrapper">
@@ -113,35 +114,39 @@
                     <div>
                         <h2 class="admin_title">Products</h2>
                     </div>
-                    
-                </div>
-                
-                    <div class="col-md-12 col-sm-12 ol-lg-12">
-                         <div class="modal-dialog modal__container" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header modal__header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="modal-product">
 
-                                <div class="admin-info">
-                                    <form action="/admin-edit/{{books.idBook}}" method="post">
-                                        <div class="product__form" >
-                                            <div class="row">
-                                                <div class="col-sm-5 col-md-6">
-                                                    <div class="input__box">
-                                                        <label>Title</label>
-                                                        <input type="text" name ="title" value="{{books.Title}}" required>
-                                                    </div>
-                                                    <div class="input__box">
-                                                        <label>Author</label>
-                                                        <input type="text" name ="author" value="{{books.idAuth}}" required>
-                                                    </div>
-                                                    <div class="input__box"> 
-                                                        <label>Genre</label>
-                                                        <input type="text" name ="genre" value="{{books.idGen}}"  required>
-                                                        {{!-- <select name ="genre">
+                </div>
+
+                <div class="col-md-12 col-sm-12 ol-lg-12">
+                    <div class="modal-dialog modal__container" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header modal__header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="modal-product">
+
+                                    <div class="admin-info">
+                                        <form action="/admin-edit/{{books.idBook}}" method="post">
+                                            <div class="product__form">
+                                                <div class="row">
+                                                    <div class="col-sm-5 col-md-6">
+                                                        <div class="input__box">
+                                                            <label>Title</label>
+                                                            <input type="text" name="title" value="{{books.Title}}"
+                                                                required>
+                                                        </div>
+                                                        <div class="input__box">
+                                                            <label>Author</label>
+                                                            <input type="text" name="author" value="{{books.idAuth}}"
+                                                                required>
+                                                        </div>
+                                                        <div class="input__box">
+                                                            <label>Genre</label>
+                                                            <input type="text" name="genre" value="{{books.idGen}}"
+                                                                required>
+                                                            {{!-- <select name ="genre">
                                                             <option>Select from the list</option>
                                                             <option value="{{books.idGen}}">biography</option>
                                                             <option value="{{books.idGen}}">business</option>
@@ -156,33 +161,38 @@
                                                             <option value="{{books.idGen}}">humor</option>
                                                             <option value="{{books.idGen}}">fairy-tale</option>
                                                             </select> --}}
-                                                </div>
-                                                    <div class="input__box">
-                                                        <label>Publishing house</label>
-                                                        <input type="text" name ="publisher" value="{{books.idPub}}"  required>
+                                                        </div>
+                                                        <div class="input__box">
+                                                            <label>Publishing house</label>
+                                                            <input type="text" name="publisher" value="{{books.idPub}}"
+                                                                required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6 col-sm-3">
+                                                        <div class="input__box">
+                                                            <label>Year</label>
+                                                            <input type="text" name="year" value="{{books.Year}}"
+                                                                required>
+                                                        </div>
+                                                        <div class="input__box">
+                                                            <label>Price</label>
+                                                            <input type="text" name="price" value="{{books.Price}}"
+                                                                required>
+                                                        </div>
+                                                        <div class="input__box">
+                                                            <label>Is the book in store</label>
+                                                            <input type="text" name="IsInStore"
+                                                                value="{{books.IsInStore}}" required>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-xs-6 col-sm-3">
-                                                    <div class="input__box">
-                                                        <label>Year</label>
-                                                        <input type="text" name ="year" value="{{books.Year}}"  required>
-                                                    </div>
-                                                    <div class="input__box">
-                                                        <label>Price</label>
-                                                        <input type="text" name ="price" value="{{books.Price}}"  required>
-                                                    </div>
-                                                    <div class="input__box">
-                                                        <label>Is the book in store</label>
-                                                        <input type="text" name="IsInStore" value="{{books.IsInStore}}" required>
-                                                    </div>
+                                                <div class="input__box">
+                                                    <label>Description</label>
+                                                    {{!-- <textarea name ="description" value="{{books.Description}}"></textarea> --}}
+                                                    <input type="text" name="description" value="{{books.Description}}"
+                                                        required>
                                                 </div>
-                                            </div>
-                                            <div class="input__box">
-                                                <label>Description</label>
-                                                {{!-- <textarea name ="description" value="{{books.Description}}"></textarea> --}}
-                                                <input type="text" name ="description" value="{{books.Description}}" required>
-                                            </div>
-                                            {{!-- <div class="input__box">
+                                                {{!-- <div class="input__box">
                                                 <label>Status</label>
                                                 <select >
                                                     <option disabled>Choose a genre</option>
@@ -192,36 +202,36 @@
                                                     <option value="Крыса Лариса">Крыса Лариса</option>
                                                    </select>
                                             </div> --}}
-                                                                                       
-                                            <div class="form__btn">
-                                                <button>Edit</button>
+
+                                                <div class="form__btn">
+                                                    <button>Edit</button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
 
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
-               
+
                 </div>
-
             </div>
-        </div>
-        <!-- cart-main-area end -->
-       
-      
-    </div>
-    <!-- //Main wrapper -->
+            <!-- cart-main-area end -->
 
-    <!-- JS Files -->
-    <script src="js/cart.js"></script>
-    <script src="js/vendor/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/active.js"></script>
+
+        </div>
+        <!-- //Main wrapper -->
+
+        <!-- JS Files -->
+        <script src="js/cart.js"></script>
+        <script src="js/vendor/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/active.js"></script>
 
 </body>
 
