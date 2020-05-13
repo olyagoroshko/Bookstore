@@ -4,7 +4,9 @@ const bodyParser = require("body-parser");
 const path = require("path");
 var fs = require('fs');
 const app = express();
-const urlencodedParser = bodyParser.urlencoded({ extended: false });
+const urlencodedParser = bodyParser.urlencoded({
+    extended: false
+});
 
 app.use(bodyParser.json());
 
@@ -37,17 +39,17 @@ app.get("/", function(req, res) {
     });
 });
 
-app.get("/single-product/:id", function(req, res){
+app.get("/single-product/:id", function(req, res) {
     const idBook = req.params.id;
     pool.query("SELECT b.Title, b.idBook, b.Description, b.IsInStore, b.Price, b.Year, g.Genre, a.FName, a.LName, p.PubName, r.Summary, r.Text, r.Nickname FROM books b LEFT JOIN genres g ON b.idGen=g.idGenre LEFT JOIN authors a ON b.idAuth=a.idAuthor LEFT JOIN publishers p ON b.idPub=p.idPublisher LEFT JOIN reviews r ON b.idBook=r.idBook WHERE b.idBook=?;", [idBook], function(err, rows) {
-      if(err) return console.log(err);
-       res.render("single-product.hbs", {
-          books: rows[0],
-          genres: rows[0],
-          authors: rows[0],
-          publishers: rows[0], 
-          reviews: rows
-      });
+        if (err) return console.log(err);
+        res.render("single-product.hbs", {
+            books: rows[0],
+            genres: rows[0],
+            authors: rows[0],
+            publishers: rows[0],
+            reviews: rows
+        });
     });
 });
 
@@ -65,20 +67,20 @@ app.post('/single-product/:id', urlencodedParser, function(req, res) {
     });
 });
 
-app.get("/shop-grid", function (req, res){
+app.get("/shop-grid", function(req, res) {
     let from = req.query.from;
     let to = req.query.to;
-    if (from == null) from=0;
-    if (to == null) to=500;  
-   // console.log(from);
-   // console.log(to);
+    if (from == null) from = 0;
+    if (to == null) to = 500;
+    // console.log(from);
+    // console.log(to);
     pool.query("SELECT * FROM books WHERE Price BETWEEN ? AND ? ;", [from, to], function(err, rows) {
-      if(err) return console.log(err);
-      res.render("shop-grid.hbs", {
-        books: rows
-      });
+        if (err) return console.log(err);
+        res.render("shop-grid.hbs", {
+            books: rows
+        });
     });
-  });
+});
 
 app.get("/shop-grid-biography", function(req, res) {
     let from = req.query.from;
@@ -306,7 +308,7 @@ app.get('/admin_users', (req, res) => {
     });
 });
 
-app.get('/delete_user/:id', (req, res) => {//поменять на ПОСТ
+app.get('/delete_user/:id', (req, res) => { //поменять на ПОСТ
     const id = req.params.id;
     pool.query("DELETE FROM customers WHERE idCustomer = ?", [id], function(err, rows) {
         if (err) return console.log(err);
@@ -361,13 +363,29 @@ app.post("/my-account/:id", urlencodedParser, function(req, res) {
     const CardNum = req.body.CardNum;
     const Passwd = req.body.Passwd;
     const Address = req.body.Address;
-    
-    pool.query("UPDATE customers SET FCustName=?, LCustName=?, Phone=?, Email=?, CardNum=?, Passwd=SHA1(?), Address=? WHERE idCustomer=?;",
-     [FCustName, LCustName, Phone, Email, CardNum, Passwd, Address, idCustomer],
-      function(err, data) {
-        if (err) return console.log(err);
-        res.redirect(idCustomer);
-    });
+
+    pool.query("UPDATE customers SET FCustName=?, LCustName=?, Phone=?, Email=?, CardNum=?, Passwd=SHA1(?), Address=? WHERE idCustomer=?;", [FCustName, LCustName, Phone, Email, CardNum, Passwd, Address, idCustomer],
+        function(err, data) {
+            if (err) return console.log(err);
+            res.redirect(idCustomer);
+        });
+});
+
+app.post('/cart', function(req, res) {
+    let books = {};
+    console.log(req.body.key);
+    if (req.body.key.length != 0) {
+        pool.query('SELECT idBook,Title,Price,idAuth FROM books WHERE idBook IN(' + req.body.key.join(',') + ')', function(err, result, fields) {
+            if (err) throw err;
+            console.log(result);
+            for (let i = 0; i < result.length; i++) {
+                books[result[i]["idBook"]] = result[i];
+            }
+            res.json(books);
+        });
+    } else {
+        res.send('0');
+    }
 });
 
 
