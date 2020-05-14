@@ -85,7 +85,7 @@
                             <li class="wishlist">
                                 <a href="/wishlist"></a>
                             </li>
-                            <li class="shopcart"><a href="/cart"> </a>
+                            <li class="shopcart"><a href="/cart"><span class="product_qun">0</span></a>
                             </li>
                             <li class="setting__bar__icon">
                                 <a class="setting__active" href="#"></a>
@@ -239,28 +239,20 @@
                     <div class="col-lg-6 col-12 md-mt-40 sm-mt-40">
                         <div class="wn__order__box">
                             <h3 class="onder__title">Your order</h3>
-                            {{!-- <ul class="order__total">
+                            <ul class="order__total">
                                 <li>Product</li>
                                 <li>Total</li>
-                            </ul> --}}
-                            <table>
-                                    <thead>
-                                        <tr class="title-top">
-                                            <th class="product-thumbnail">Image</th>
-                                            <th class="product-name">Product</th>
-                                            <th class="product-price">Price</th>
-                                            <th class="product-quantity">Quantity</th>
-                                            <th class="product-quantity">Remove</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="cart-items">
-                                        
-                                    </tbody>
-                                </table>
+                            </ul>
+                            <ul class="order_product">
+                                <li>Buscipit at magna × 1<span>$48.00</span></li>
+                                <li>Buscipit at magna × 1<span>$48.00</span></li>
+                                <li>Buscipit at magna × 1<span>$48.00</span></li>
+                                <li>Buscipit at magna × 1<span>$48.00</span></li>
+                            </ul>
 
-                            {{!-- <ul class="total__amount">
+                            <ul class="total__amount">
                                 <li>Order Total <span>$223.00</span></li>
-                            </ul> --}}
+                            </ul>
                         </div>
                         <div class="wn__order">
 
@@ -304,8 +296,7 @@
     <!-- //Main wrapper -->
 
     <!-- JS Files -->
-    <script src="js/order.js"></script>
-    <script src="js/cart.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

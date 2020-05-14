@@ -5878,7 +5878,7 @@ h3.widget-title-modal {
     margin: 0 15px 15px 0;
 }
 
-.product__info__main .box-tocart .addtocart__actions .add-to-cart {
+.product__info__main .box-tocart .addtocart__actions .tocart {
     background: #e59285 none repeat scroll 0 0;
     border: 0 none;
     color: #fff;
@@ -5923,7 +5923,7 @@ h3.widget-title-modal {
     margin-top: 25px;
 }
 
-.product__info__main .box-tocart .addtocart__actions .add-to-cart:hover {
+.product__info__main .box-tocart .addtocart__actions .tocart:hover {
     background-color: #e59285;
     border-color: #e59285;
 }
@@ -7712,10 +7712,6 @@ h3.widget-title-modal {
 
 .table-content table td.product-thumbnail {
     width: 130px;
-}
-
-.wn__order__box table td.product-thumbnail {
-    width: 50px;
 }
 
 .table-content table td.product-remove i {
