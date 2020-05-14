@@ -79,13 +79,11 @@
                     </div>
                     <div class="col-md-6 col-sm-6 col-6 col-lg-2">
                         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-                            <li class="shop_search">
-                                <a class="search__active" href="#"></a>
-                            </li>
+                             
                             <li class="wishlist">
                                 <a href="/wishlist"></a>
                             </li>
-                            <li class="shopcart"><a href="/cart"><span class="product_qun">0</span></a>
+                            <li class="shopcart"><a href="/cart"> </a>
                             </li>
                             <li class="setting__bar__icon">
                                 <a class="setting__active" href="#"></a>
@@ -190,8 +188,8 @@
                                                 <th class="product-add-to-cart"></th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
+                                        <tbody class="wishlist-items">
+                                            {{!-- <tr>
                                                 <td class="product-remove"><a href="#">×</a></td>
                                                 <td class="product-thumbnail">
                                                     <a href="#"><img src="images/product/sm-3/1.jpg" alt=""></a>
@@ -223,7 +221,7 @@
                                                 <td class="product-stock-status"><span class="wishlist-in-stock">In
                                                         Stock</span></td>
                                                 <td class="product-add-to-cart"><a href="#"> Add to Cart</a></td>
-                                            </tr>
+                                            </tr> --}}
                                         </tbody>
                                     </table>
                                 </div>
@@ -262,6 +260,8 @@
     <!-- //Main wrapper -->
 
     <!-- JS Files -->
+    <script src="js/wishlist.js"></script>
+    <script src="js/cart.js"></script>
     <script src="js/script.js"></script>
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>

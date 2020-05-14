@@ -4252,7 +4252,7 @@ h3.widget-title-modal {
         padding: 0 18px;
     }
     .product__info__main .product-addto-links a.compare,
-    .product__info__main .product-addto-links a.wishlist {
+    .product__info__main .product-addto-links button.add-to-cart {
         display: none;
     }
 }
@@ -5878,7 +5878,7 @@ h3.widget-title-modal {
     margin: 0 15px 15px 0;
 }
 
-.product__info__main .box-tocart .addtocart__actions .tocart {
+.product__info__main .box-tocart .addtocart__actions .add-to-cart {
     background: #e59285 none repeat scroll 0 0;
     border: 0 none;
     color: #fff;
@@ -5923,7 +5923,7 @@ h3.widget-title-modal {
     margin-top: 25px;
 }
 
-.product__info__main .box-tocart .addtocart__actions .tocart:hover {
+.product__info__main .box-tocart .addtocart__actions .add-to-cart:hover {
     background-color: #e59285;
     border-color: #e59285;
 }
@@ -5942,7 +5942,7 @@ h3.widget-title-modal {
     width: 40px;
 }
 
-.product__info__main .product-addto-links a.wishlist {
+.product__info__main .product-addto-links button.add-to-cart {
     background: #ffffff url("../images/icons/product-info.png") no-repeat scroll 0 0;
 }
 
@@ -5954,7 +5954,7 @@ h3.widget-title-modal {
     background: #ffffff url("../images/icons/button-email.png") no-repeat scroll 0 0;
 }
 
-.product__info__main .product-addto-links a:hover {
+.product__info__main .product-addto-links button:hover {
     background-color: #e59285;
     background-position: 100% center;
     border-color: #e59285;
@@ -8012,7 +8012,7 @@ h3.widget-title-modal {
     color: #e59285;
 }
 
-.product-add-to-cart a {
+.product-add-to-cart button {
     border: 2px solid #333;
     color: #333;
     display: inline-block;
@@ -8031,7 +8031,7 @@ h3.widget-title-modal {
     width: 210px;
 }
 
-.product-add-to-cart a:hover {
+.product-add-to-cart button:hover {
     border: 2px solid #e59285;
     color: #e59285;
 }

@@ -1,3 +1,4 @@
+console.log('ok_w');
 let wishlist = {};
 document.querySelectorAll(".add-to-wishlist").forEach(function(element) {
     element.onclick = addToWishlist;
@@ -43,12 +44,12 @@ function ajaxGetBookInfoWishlist() {
 function showWishlist(data) {
     let productContainerWishlist = '<tr>';
     for (let key in wishlist) {
-        productContainerWishlist += ` <td class="product-remove"><a data-books_id="${key}" class="btn-remove">×</a></td>`
+        productContainerWishlist += `<td class="product-remove"><a data-books_id="${key}" class="btn-remove">×</a></td>`
         productContainerWishlist += `<td class="product-thumbnail"><a href="#"><img src="images/product/sm-3/1.jpg" alt=""></a></td>`
         productContainerWishlist += `<td class="product-name"><span>${data[key]['Title']}</span></td>`
         productContainerWishlist += `<td class="product-price"><span class="price">$${data[key]['Price']}</span></td>`
         productContainerWishlist += `<td class="product-stock-status"><span class="wishlist-in-stock">${data[key]['IsInStore']}</span></td>`
-        productContainerWishlist += `<td class="product-add-to-cart"><a href="">Add to cart</a></td>`
+        productContainerWishlist += `<td class="product-add-to-cart"><button class="add-to-cart" data-books_id ="${data[key]['idBook']}" >Add to cart</button></td>`
         productContainerWishlist += `</tr>`
     }
     // productContainer += `</tr>`
@@ -73,17 +74,16 @@ function showWishlist(data) {
     //     element.onclick = cartPlus;
     // });
     document.querySelectorAll('.btn-remove').forEach(function(element) {
-        element.onclick = btnRemove;
+        element.onclick = btnRemoveWishlist;
     });
 }
 
 
-function btnRemove() {
+function btnRemoveWishlist() {
     let booksId = this.dataset.books_id;
     if (wishlist[booksId]) {
         delete(wishlist[booksId]);
     }
-
     ajaxGetBookInfoWishlist();
 }
 
