@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-7 col-lg-2">
                         <div class="logo">
-                            <a href="#">
+                            <a href="/">
                                 <img src="images/logo/logo.png" alt="logo images">
                             </a>
                         </div>
@@ -67,8 +67,9 @@
                     </div>
                     <div class="col-md-8 col-sm-8 col-5 col-lg-2">
                         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-                            <button class="admin_sign_out">Sign Out</button>
-
+                            <form action='logout'>
+	                            <button class="admin_sign_out">Sign Out</button>
+                            </form>
                         </ul>
                     </div>
                 </div>
@@ -146,7 +147,6 @@
                                             </td>
                                             <td class="product-name">
                                                 <p>{{this.Title}}</p>
-                                                <p>{{this.idAuth}}</p>
                                             </td>
                                             <td class="product-price"><span class="amount">${{this.Price}}</span></td>
                                             {{!-- <td class="product-quantity">20</td> --}}

@@ -105,5 +105,3 @@ function btnRemove() {
 function updeteLocalStoradeCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
-
-include("js/wishlist.js");

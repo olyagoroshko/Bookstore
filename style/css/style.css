@@ -453,11 +453,13 @@ caption {
 th {
     font-weight: bold;
     text-transform: uppercase;
+    text-align: center;
 }
 
 td {
     border-top: 1px solid #ededed;
     padding: 6px 10px 6px 0;
+    text-align: center;
 }
 
 del {
@@ -7991,6 +7993,7 @@ h3.widget-title-modal {
 
 .product-thumbnail {
     padding: 25px 0;
+    width: 60px;
 }
 
 .product-name a {

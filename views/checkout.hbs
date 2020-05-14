@@ -79,7 +79,7 @@
                     </div>
                     <div class="col-md-6 col-sm-6 col-6 col-lg-2">
                         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-                             
+
                             <li class="wishlist">
                                 <a href="/wishlist"></a>
                             </li>
@@ -182,51 +182,35 @@
                                 <div class="margin_between">
                                     <div class="input_box space_between">
                                         <label>First name <span>*</span></label>
-                                        <input type="text">
+                                        <input type="text" name="FCustName" value="{{customers.FCustName}}" required>
                                     </div>
                                     <div class="input_box space_between">
                                         <label>last name <span>*</span></label>
-                                        <input type="text">
+                                        <input type="text" name="LCustName" value="{{customers.LCustName}}" required>
                                     </div>
                                 </div>
-                                <div class="margin_between">
-                                    <div class="input_box space_between">
-                                        <label>City <span>*</span></label>
-                                        <input type="text">
-                                    </div>
-                                    <div class="input_box space_between">
-                                        <label>Street address <span>*</span></label>
-                                        <input type="text">
-                                    </div>
+                                <div class="input__box">
+                                    <label>Address <span>*</span></label>
+                                    <input type="text" name="Address" value="{{customers.Address}}" required>
                                 </div>
-                                <div class="margin_between">
-                                    <div class="input_box space_between">
-                                        <label>House № <span>*</span></label>
-                                        <input type="text">
-                                    </div>
-                                    <div class="input_box space_between">
-                                        <label>Apartment № <span>*</span></label>
-                                        <input type="text">
-                                    </div>
-                                    <div class="input_box space_between">
-                                        <label>Postcode <span>*</span></label>
-                                        <input type="text">
-                                    </div>
-                                </div>
+
                                 <div class="margin_between">
                                     <div class="input_box space_between">
                                         <label>Phone <span>*</span></label>
-                                        <input type="text">
+                                        <input type="tel" name="Phone" value="{{customers.Phone}}"
+                                            pattern="[8029][0-9]{10}" required>
                                     </div>
 
                                     <div class="input_box space_between">
                                         <label>Email address <span>*</span></label>
-                                        <input type="email">
+                                        <input type="email" name="Email"
+                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                                            value="{{customers.Email}}" required>
                                     </div>
                                 </div>
                                 <div class="input__box">
                                     <label>Credit card № <span>*</span></label>
-                                    <input type="text">
+                                    <input type="text" name="CardNum" value="{{customers.CardNum}}" required>
                                 </div>
                             </div>
                         </div>
@@ -247,20 +231,20 @@
                                 <li>Buscipit at magna × 1<span>$48.00</span></li>
                                 <li>Buscipit at magna × 1<span>$48.00</span></li>
                             </ul> --}}
-<table>
-                                    <thead>
-                                        <tr class="title-top">
-                                            <th class="product-thumbnail">Image</th>
-                                            <th class="product-name">Product</th>
-                                            <th class="product-price">Price</th>
-                                            <th class="product-quantity">Quantity</th>
-                                            <th class="product-quantity">Remove</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="cart-items">
+                            <table>
+                                <thead>
+                                    <tr class="title-top">
+                                        <th class="product-thumbnail">Image</th>
+                                        <th class="product-name">Product</th>
+                                        <th class="product-price">Price</th>
+                                        <th class="product-quantity">Quantity</th>
+                                        <th class="product-quantity">Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="cart-items">
 
-                                    </tbody>
-                                </table>
+                                </tbody>
+                            </table>
                             {{!-- <ul class="total__amount">
                                 <li>Order Total <span>$223.00</span></li>
                             </ul> --}}
@@ -291,8 +275,7 @@
                                     <a href="/">
                                         <img src="images/logo/3.png" alt="logo">
                                     </a>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority
-                                        have suffered duskam alteration variations of passages</p>
+                                    <p>Bookstor (c)</p>
                                 </div>
 
                             </div>

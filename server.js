@@ -296,14 +296,10 @@ app.get('/admin_products', (req, res) => {
     console.log('check')
     console.log(id);
     if (id === "{\"user_id\":40}") {
-        pool.query('SELECT * FROM Books', [req.params.id], (err, rows, fields) => {
+        pool.query('SELECT * FROM books', (err, rows, fields) => {
             if (err) return console.log(err);
             res.render("admin_products.hbs", {
-                books: rows,
-                genres: rows,
-                authors: rows[0],
-                publishers: rows
-
+                books: rows
             });
         });
     } else {

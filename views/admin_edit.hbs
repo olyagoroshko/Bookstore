@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-7 col-lg-2">
                         <div class="logo">
-                            <a href="#">
+                            <a href="/">
                                 <img src="/images/logo/logo.png" alt="logo images">
                             </a>
                         </div>
@@ -67,8 +67,9 @@
                     </div>
                     <div class="col-md-8 col-sm-8 col-5 col-lg-2">
                         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-                            <button class="admin_sign_out">Sign Out</button>
-
+                            <form action='../logout'>
+	                            <button class="admin_sign_out">Sign Out</button>
+                            </form>
                         </ul>
                     </div>
                 </div>
@@ -80,7 +81,7 @@
         </header>
         <!-- //Header -->
         <!-- Start Search Popup -->
-        <div class="box-search-content search_active block-bg close__top">
+        <!--<div class="box-search-content search_active block-bg close__top">
             <form id="search_mini_form" class="minisearch" action="#">
                 <div class="field__search">
                     <input type="text" placeholder="Search entire store here...">
@@ -92,7 +93,7 @@
             <div class="close__wrap">
                 <span>close</span>
             </div>
-        </div>
+        </div>-->
         <!-- End Search Popup -->
         <!-- Start Bradcaump area -->
         <div class="ht__bradcaump__area">
@@ -120,10 +121,12 @@
                 <div class="col-md-12 col-sm-12 ol-lg-12">
                     <div class="modal-dialog modal__container" role="document">
                         <div class="modal-content">
+                            <form action="/admin_products">
                             <div class="modal-header modal__header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                <button type="submit" class="close" data-dismiss="modal" aria-label="Close"><span
                                         aria-hidden="true">&times;</span></button>
                             </div>
+                            </form>
                             <div class="modal-body">
                                 <div class="modal-product">
 
@@ -138,32 +141,17 @@
                                                                 required>
                                                         </div>
                                                         <div class="input__box">
-                                                            <label>Author</label>
+                                                            <label>Author ID</label>
                                                             <input type="text" name="author" value="{{books.idAuth}}"
                                                                 required>
                                                         </div>
                                                         <div class="input__box">
-                                                            <label>Genre</label>
+                                                            <label>Genre ID</label>
                                                             <input type="text" name="genre" value="{{books.idGen}}"
                                                                 required>
-                                                            {{!-- <select name ="genre">
-                                                            <option>Select from the list</option>
-                                                            <option value="{{books.idGen}}">biography</option>
-                                                            <option value="{{books.idGen}}">business</option>
-                                                            <option value="{{books.idGen}}">cooking</option>
-                                                            <option value="{{books.idGen}}">health</option>
-                                                            <option value="{{books.idGen}}">history</option>
-                                                            <option value="{{books.idGen}}">mystery</option>
-                                                            <option value="{{books.idGen}}">inspiration</option>
-                                                            <option value="{{books.idGen}}">romance</option>
-                                                            <option value="{{books.idGen}}">fiction</option>
-                                                            <option value="{{books.idGen}}">self-improvement</option>
-                                                            <option value="{{books.idGen}}">humor</option>
-                                                            <option value="{{books.idGen}}">fairy-tale</option>
-                                                            </select> --}}
                                                         </div>
                                                         <div class="input__box">
-                                                            <label>Publishing house</label>
+                                                            <label>Publishing house ID</label>
                                                             <input type="text" name="publisher" value="{{books.idPub}}"
                                                                 required>
                                                         </div>

@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-7 col-lg-2">
                         <div class="logo">
-                            <a href="#">
+                            <a href="/">
                                 <img src="images/logo/logo.png" alt="logo images">
                             </a>
                         </div>
@@ -67,12 +67,12 @@
                     </div>
                     <div class="col-md-8 col-sm-8 col-5 col-lg-2">
                         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-                            <button class="admin_sign_out">Sign Out</button>
-
+                            <form action='logout'>
+                                <button class="admin_sign_out">Sign Out</button>
+                            </form>
                         </ul>
                     </div>
                 </div>
-
                 <div class="mobile-menu d-block d-lg-none">
                 </div>
                 <!-- Mobile Menu -->
@@ -80,7 +80,7 @@
         </header>
         <!-- //Header -->
         <!-- Start Search Popup -->
-        <div class="box-search-content search_active block-bg close__top">
+        <!--<div class="box-search-content search_active block-bg close__top">
             <form id="search_mini_form" class="minisearch" action="#">
                 <div class="field__search">
                     <input type="text" placeholder="Search entire store here...">
@@ -92,7 +92,7 @@
             <div class="close__wrap">
                 <span>close</span>
             </div>
-        </div>
+        </div>-->
         <!-- End Search Popup -->
         <!-- Start Bradcaump area -->
         <div class="ht__bradcaump__area">
@@ -120,10 +120,12 @@
                 <div class="col-md-12 col-sm-12 ol-lg-12">
                     <div class="modal-dialog modal__container" role="document">
                         <div class="modal-content">
+                            <form action="/admin_products">
                             <div class="modal-header modal__header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                <button type="submit" class="close" data-dismiss="modal" aria-label="Close"><span
                                         aria-hidden="true">&times;</span></button>
                             </div>
+                            </form>
                             <div class="modal-body">
                                 <div class="modal-product">
 
@@ -142,9 +144,7 @@
                                                         </div>
                                                         <div class="input__box">
                                                             <label>Genre</label>
-
                                                             <select name="genre">
-                                                                <option>Select from the list</option>
                                                                 <option value="1">biography</option>
                                                                 <option value="2">business</option>
                                                                 <option value="3">cooking</option>
@@ -161,7 +161,10 @@
                                                         </div>
                                                         <div class="input__box">
                                                             <label>Publishing house</label>
-                                                            <input type="text" name="publisher" required>
+                                                            <select name="publisher">
+                                                                <option value="1">Alpina</option>
+                                                                <option value="2">Eksmo</option>
+                                                            </select> 
                                                         </div>
                                                     </div>
                                                     <div class="col-xs-6 col-sm-3">
@@ -175,14 +178,16 @@
                                                         </div>
                                                         <div class="input__box">
                                                             <label>Is the book in store</label>
-                                                            <input type="text" name="IsInStore" required>
+                                                            <select name="publisher">
+                                                                <option value="Y">Yes</option>
+                                                                <option value="N">No</option>
+                                                            </select>                                                         
                                                         </div>
-
                                                     </div>
                                                 </div>
                                                 <div class="input__box">
                                                     <label>Description</label>
-                                                    <textarea name="description"></textarea>
+                                                    <textarea name="description" required></textarea>
                                                 </div>
                                                 {{!-- <div class="input__box">
                                                 <label>Status</label>
