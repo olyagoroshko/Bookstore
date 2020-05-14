@@ -88,7 +88,7 @@
                             </li>
                             <li class="shopcart">
                                 <a href="/cart">
-                                    <span class="product_qun">0</span></a>
+                                     </a>
                             </li>
                             <li class="setting__bar__icon">
                                 <a class="setting__active" href="#"></a>
@@ -278,7 +278,7 @@
                                                     <ul class="add_to_links">
                                                         <li><button data-books_id ="{{this.idBook}}" class="add-to-cart" href=""><i
                                                                     class="bi bi-shopping-cart-full"></i></a></li>
-                                                        <li><button class="wishlist" href="/wishlist"><i
+                                                        <li><button data-books_id ="{{this.idBook}}" class="add-to-wishlist" href=""><i
                                                                     class="bi bi-heart-beat"></i></a></li>
                                                     </ul>
                                                 </div>
@@ -517,6 +517,8 @@
     <!-- //Main wrapper -->
 
     <!-- JS Files -->
+    <script src="js/order.js"></script>
+    <script src="js/wishlist.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>

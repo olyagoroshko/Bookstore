@@ -190,6 +190,7 @@ function ajaxGetBookInfo() {
         .then(function(body) {
             console.log(body);
             showCart(JSON.parse(body));
+            // showOrder(JSON.parse(body));
         });
 }
 
@@ -199,17 +200,18 @@ function showCart(data) {
     for (let key in cart) {
         productContainer += ` <td class="product-thumbnail"><a href="#"><img src="images/product/sm-3/1.jpg" alt="product img"></a></td>`
         productContainer += `<td class="product-name"><span>${data[key]['Title']}</span></td>`
-        productContainer += `<td class="product-price"><span class="price">$${data[key]['Price']*cart[key]}</span></td>`
+        productContainer += `<td class="product-price"><span class="price">$${(data[key]['Price']*cart[key]).toFixed(2)}</span></td>`
         productContainer += `<td class="product-quantity"><ion-icon class="cart-minus" data-books_id="${key}" name="remove-circle-outline"></ion-icon><span>${cart[key]}<span><ion-icon class="cart-plus" data-books_id="${key}" name="add-circle-outline"></ion-icon></td>`
+        productContainer += `<td class="product-remove"><a data-books_id="${key}" class="btn-remove">×</a></td>`
         productContainer += `</tr>`
-        total += cart[key] * data[key]['Price'];
+        total += cart[key] * (data[key]['Price']).toFixed(2);
     }
     // productContainer += `</tr>`
     productContainer += `
             <div class="row">
             <div class="cart__total__amount col-md-8">
                 <span>Grand Total</span>
-                <span class="grandTotal">$${total}</span>
+                <span class="grandTotal">$${total.toFixed(2)}</span>
             </div>
             <div class="col-md-4">
                 <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between ">
@@ -224,6 +226,9 @@ function showCart(data) {
     });
     document.querySelectorAll('.cart-plus').forEach(function(element) {
         element.onclick = cartPlus;
+    });
+    document.querySelectorAll('.btn-remove').forEach(function(element) {
+        element.onclick = btnRemove;
     });
 }
 
@@ -243,6 +248,33 @@ function cartMinus() {
     ajaxGetBookInfo();
 }
 
+function btnRemove() {
+    let booksId = this.dataset.books_id;
+    if (cart[booksId]) {
+        delete(cart[booksId]);
+    }
+
+    ajaxGetBookInfo();
+}
+
+
 function updeteLocalStoradeCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
+
+// function showOrder(data) {
+//     ajaxGetBookInfo();
+//     let productOrder;
+//     let total = 0;
+//     for (let key in cart) {
+//         productOrder += ` <li>${data[key]['Title']} × ${cart[key]}<span>$${data[key]['Price']*cart[key]}</span></li>`
+//         total += cart[key] * data[key]['Price'];
+//     }
+//     // productContainer += `</tr>`
+//     productOrder += `
+//     <ul class="total__amount">
+//     <li>Order Total <span>$${total}</span></li>
+// </ul>
+//     `
+//     document.querySelector(".order_product").innerHTML = productOrder;
+// }

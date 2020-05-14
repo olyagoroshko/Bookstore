@@ -84,7 +84,7 @@
                             <li class="wishlist">
                                 <a href="/wishlist"></a>
                             </li>
-                            <li class="shopcart"><a href="/cart"><span class="product_qun">0</span></a>
+                            <li class="shopcart"><a href="/cart"> </a>
                             </li>
                             <li class="setting__bar__icon">
                                 <a class="setting__active" href="#"></a>
@@ -213,15 +213,12 @@
                                             <p><b>Is the book in the store: </b>{{books.IsInStore}}</p>
                                         </div>
                                         <div class="box-tocart d-flex">
-                                            <span>Qty</span>
-                                            <input id="qty" class="input-text qty" name="qty" min="1" value="1"
-                                                title="Qty" type="number">
-                                            <div class="addtocart__actions">
-                                                <button class="tocart" type="submit" title="Add to Cart">Add to
+                                                <div class="addtocart__actions">
+                                                <button class="add-to-cart" data-books_id ="{{this.idBook}}" class="add-to-cart" href="">Add to
                                                     Cart</button>
                                             </div>
                                             <div class="product-addto-links clearfix">
-                                                <a class="wishlist" href="#"></a>
+                                                <a class="wishlist" data-books_id ="{{this.idBook}}" href=""></a>
 
                                             </div>
                                         </div>
@@ -451,6 +448,7 @@
 
 
     <!-- JS Files -->
+    <script src="js/cart.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/vendor/jquery-3.2.1.min.js"></script>
     <script src="/js/popper.min.js"></script>
