@@ -62,11 +62,6 @@ function showCart(data) {
                 <span>Grand Total</span>
                 <span class="grandTotal">$${total.toFixed(2)}</span>
             </div>
-            <div class="col-md-4">
-                <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between ">
-                    <li><a href="#">Make an order</a></li>
-                </ul>
-            </div>
         </div>
     `
     document.querySelector(".cart-items").innerHTML = productContainer;
