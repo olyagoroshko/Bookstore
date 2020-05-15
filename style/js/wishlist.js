@@ -49,7 +49,7 @@ function showWishlist(data) {
         productContainerWishlist += `<td class="product-name"><span>${data[key]['Title']}</span></td>`
         productContainerWishlist += `<td class="product-price"><span class="price">$${data[key]['Price']}</span></td>`
         productContainerWishlist += `<td class="product-stock-status"><span class="wishlist-in-stock">${data[key]['IsInStore']}</span></td>`
-        productContainerWishlist += `<td class="product-add-to-cart"><button class="add-to-cart" data-books_id ="${data[key]['idBook']}" >Add to cart</button></td>`
+        productContainerWishlist += `<td class="product-add-to-cart"><a href="/single-product/${key}/">Show Info</a></td>`
         productContainerWishlist += `</tr>`
     }
     // productContainer += `</tr>`

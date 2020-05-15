@@ -1,6 +1,6 @@
 ﻿/*********************************************************************************
 
-    Template Name: Boighor Responsive Bootstrap4 Template  
+    Template Name: Boighor Responsive Bootstrap4 Template
     Version: 1.0
     Note: This is style css.
 
@@ -1449,7 +1449,7 @@ Elements Styles
 
 
 /*------------------------------
-  Button Styles 
+  Button Styles
 ------------------------------*/
 
 .shopbtn {
@@ -1558,7 +1558,7 @@ Elements Styles
 
 
 /*------------------------------
-  Slide Activation Styles 
+  Slide Activation Styles
 ------------------------------*/
 
 .arrows_style {
@@ -1761,7 +1761,7 @@ Elements Styles
 
 
 /*------------------------------
-  Social Icon Styles 
+  Social Icon Styles
 ------------------------------*/
 
 .social__net li {
@@ -2180,7 +2180,7 @@ Elements Styles
 
 
 /*------------------------------
-  Cart Box Styles 
+  Cart Box Styles
 ------------------------------*/
 
 .cartbox_active {
@@ -2416,7 +2416,7 @@ Elements Styles
 
 
 /*------------------------------
-  Setting Styles 
+  Setting Styles
 ------------------------------*/
 
 .setting__active {
@@ -3260,7 +3260,7 @@ nav.menu ul li a {
 
 
 /*------------------------------
-  Testimonial Styles 
+  Testimonial Styles
 ------------------------------*/
 
 .testimonial__container .tes__img__slide {
@@ -3402,7 +3402,7 @@ nav.menu ul li a {
 
 
 /*------------------------------
-  Product Styles 
+  Product Styles
 ------------------------------*/
 
 .product {
@@ -5930,7 +5930,7 @@ h3.widget-title-modal {
     border-color: #e59285;
 }
 
-.product__info__main .product-addto-links a {
+.product__info__main .product-addto-links button {
     border: 2px solid #ebebeb;
     border-radius: 100%;
     float: left;
@@ -5944,7 +5944,7 @@ h3.widget-title-modal {
     width: 40px;
 }
 
-.product__info__main .product-addto-links button.add-to-cart {
+.product__info__main .product-addto-links button.add-to-wishlist {
     background: #ffffff url("../images/icons/product-info.png") no-repeat scroll 0 0;
 }
 
@@ -8015,7 +8015,7 @@ h3.widget-title-modal {
     color: #e59285;
 }
 
-.product-add-to-cart button {
+.product-add-to-cart a {
     border: 2px solid #333;
     color: #333;
     display: inline-block;
@@ -8034,7 +8034,7 @@ h3.widget-title-modal {
     width: 210px;
 }
 
-.product-add-to-cart button:hover {
+.product-add-to-cart a:hover {
     border: 2px solid #e59285;
     color: #e59285;
 }
