@@ -520,12 +520,51 @@ app.post("/my-account", urlencodedParser,
                 });
         });
     });
+// //////////////////////////////////////////////////////////////////////////////////////////////////////
+app.get('/checkout', authenticationMiddleware(),
+    (req, res) => {
+        const id = req.user.user_id;
+        pool.query("SELECT * FROM customers WHERE idCustomer = ?", [id], (err, result) => {
+            if (err) return console.log(err);
+            res.render("checkout.hbs", {
+                customers: result[0]
+            });
+        });
+    });
 
+app.post("/checkout", urlencodedParser,
+    authenticationMiddleware(),
+    function(req, res) {
+        console.log(req.body);
+        if (req.body.key.length != 0) {
+            let key = Object.keys(req.body.key);
+        } else {
+            res.send(1);
+        }
+
+    });
+app.post('/checkout', authenticationMiddleware(),
+    urlencodedParser,
+    function(req, res) {
+        if (!req.body) return res.sendStatus(400);
+        const idBook = req.params.id;
+        const idReview = null;
+        const Nickname = req.body.nickname;
+        const Summary = req.body.summary;
+        const Text = req.body.text;
+        console.log(idReview, idBook, Nickname, Summary, Text);
+        pool.query("INSERT INTO reviews (idOrder, idBook, Summary, Text, Nickname) VALUES (?, ?, ?, ?, ?)", [idReview, idBook, Summary, Text, Nickname], function(err, rows) {
+            if (err) return console.log(err);
+            res.redirect(idBook);
+        });
+    });
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 app.post('/cart', authenticationMiddleware(), function(req, res) {
     let books = {};
     console.log(req.body.key);
     if (req.body.key.length != 0) {
-        pool.query('SELECT idBook,Title,Price,idAuth FROM books WHERE idBook IN(' + req.body.key.join(',') + ')', function(err, result, fields) {
+        pool.query('SELECT * FROM books WHERE idBook IN(' + req.body.key.join(',') + ')', function(err, result, fields) {
             if (err) throw err;
             console.log(result);
             for (let i = 0; i < result.length; i++) {
@@ -542,7 +581,7 @@ app.post('/wishlist', authenticationMiddleware(), function(req, res) {
     let books = {};
     console.log(req.body.key);
     if (req.body.key.length != 0) {
-        pool.query('SELECT idBook,Title,Price,idAuth,IsInStore FROM books WHERE idBook IN(' + req.body.key.join(',') + ')', function(err, result, fields) {
+        pool.query('SELECT * FROM books WHERE idBook IN(' + req.body.key.join(',') + ')', function(err, result, fields) {
             if (err) throw err;
             console.log(result);
             for (let i = 0; i < result.length; i++) {

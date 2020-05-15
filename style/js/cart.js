@@ -1,6 +1,5 @@
 let cart = {};
 document.querySelectorAll(".add-to-cart").forEach(function(element) {
-    console.log('ok_c');
     element.onclick = addToCart;
 });
 
@@ -44,6 +43,7 @@ function ajaxGetBookInfo() {
 }
 
 function showCart(data) {
+    console.log("1");
     let productContainer = '<tr class="checkout">';
     let total = 0;
     for (let key in cart) {
@@ -56,14 +56,22 @@ function showCart(data) {
         total += cart[key] * (data[key]['Price']).toFixed(2);
     }
     // productContainer += `</tr>`
-    productContainer += `
-            <div class="row">
-            <div class="cart__total__amount col-md-8">
-                <span>Grand Total</span>
-                <span class="grandTotal">$${total.toFixed(2)}</span>
-            </div>
-        </div>
-    `
+    // productContainer += `
+    //         <div class="row">
+    //         <div class="cart__total__amount col-md-8">
+    //             <span>Grand Total</span>
+    //             <span class="grandTotal">$${total.toFixed(2)}</span>
+    //         </div>
+    //     </div>
+    // `
+    let productOrder = document.querySelector(".cartbox__btn");
+    productOrder.innerHTML = `<div class="row">
+    <div class="cart__total__amount">
+        <span>Grand Total</span>
+        <span class="grandTotal">${total.toFixed(2)}</span>
+    </div>
+</div>`
+
     document.querySelector(".cart-items").innerHTML = productContainer;
     document.querySelectorAll('.cart-minus').forEach(function(element) {
         element.onclick = cartMinus;

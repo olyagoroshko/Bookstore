@@ -178,7 +178,7 @@
                     <div class="col-lg-6 col-12">
                         <div class="customer_details">
                             <h3>Billing details</h3>
-                            <div class="customar__field">
+                            <form class="customar__field" action="/checkout" method="post">
                                 <div class="margin_between">
                                     <div class="input_box space_between">
                                         <label>First name <span>*</span></label>
@@ -212,7 +212,15 @@
                                     <label>Credit card № <span>*</span></label>
                                     <input type="text" name="CardNum" value="{{customers.CardNum}}" required>
                                 </div>
-                            </div>
+                            </form>
+                            <div class="wn__order">
+
+                            <ul
+                                class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between ">
+                                <li><button class="send-order" type="submit" href="">Order</a></li>
+                            </ul>
+
+                        </div>
                         </div>
 
 
@@ -248,15 +256,9 @@
                             {{!-- <ul class="total__amount">
                                 <li>Order Total <span>$223.00</span></li>
                             </ul> --}}
+                            <div class="cartbox__btn"></div>
                         </div>
-                        <div class="wn__order">
 
-                            <ul
-                                class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between ">
-                                <li><a href="#">Order</a></li>
-                            </ul>
-
-                        </div>
 
 
                     </div>
@@ -291,8 +293,8 @@
 
     <!-- JS Files -->
     <script src="js/script.js"></script>
-    <script src="js/order.js"></script>
-    <script src="js/cart.js"></script>
+    <script src="/js/order.js"></script>
+    <script src="/js/cart.js"></script>
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
