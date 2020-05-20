@@ -155,12 +155,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="bradcaump__inner text-center">
-                            <!-- <h2 class="bradcaump-title">Shop Single</h2>
-                            <nav class="bradcaump-content">
-                                <a class="breadcrumb_item" href="/">Home</a>
-                                <span class="brd-separetor">/</span>
-                                <span class="breadcrumb_item active">Shop Single</span>
-                            </nav> -->
+                    
                         </div>
                     </div>
                 </div>
@@ -178,13 +173,7 @@
                                     <div class="wn__fotorama__wrapper">
                                         <div class="fotorama wn__fotorama__action" data-nav="thumbs">
                                             <a href="1.jpg"><img src="/images/product/{{books.idBook}}.jpg" alt=""></a>
-                                            <!--<a href="2.jpg"><img src="/images/product/2.jpg" alt=""></a>
-                                            <a href="3.jpg"><img src="/images/product/3.jpg" alt=""></a>
-                                            <a href="4.jpg"><img src="/images/product/4.jpg" alt=""></a>
-                                            <a href="5.jpg"><img src="/images/product/5.jpg" alt=""></a>
-                                            <a href="6.jpg"><img src="/images/product/6.jpg" alt=""></a>
-                                            <a href="7.jpg"><img src="/images/product/7.jpg" alt=""></a>
-                                            <a href="8.jpg"><img src="/images/product/8.jpg" alt=""></a>-->
+
                                         </div>
                                     </div>
                                 </div>
@@ -192,13 +181,7 @@
                                     <div class="product__info__main">
                                         <h1>{{books.Title}}</h1>
                                         <div class="product-reviews-summary d-flex">
-                                            <!-- <ul class="rating-summary d-flex">
-                                                <li><i class="zmdi zmdi-star-outline"></i></li>
-                                                <li><i class="zmdi zmdi-star-outline"></i></li>
-                                                <li><i class="zmdi zmdi-star-outline"></i></li>
-                                                <li class="off"><i class="zmdi zmdi-star-outline"></i></li>
-                                                <li class="off"><i class="zmdi zmdi-star-outline"></i></li>
-                                            </ul> -->
+
                                         </div>
                                         <div class="price-box">
                                             <span>${{books.Price}}</span>
@@ -211,29 +194,21 @@
                                             <p><b>Is the book in the store: </b>{{books.IsInStore}}</p>
                                         </div>
                                         <div class="box-tocart d-flex">
-                                            {{!-- <div class="addtocart__actions">
-                                                <button data-books_id ="{{this.idBook}}" class="add-to-cart" href="">Add to
-                                                    Cart</button>
-                                            </div>
-                                            <div class="product-addto-links clearfix">
-                                                <li><button data-books_id ="{{this.idBook}}" class="add-to-wishlist" href=""><i class="bi bi-heart-beat"></i></li>
 
-                                            </div> --}}
+                                            <form action="/addcart/{{books.idBook}}" method="POST">
                                             <div class="addtocart__actions">
                                                 <button data-books_id ="{{books.idBook}}" class="add-to-cart" type="submit" title="Add to Cart">Add to Cart</button>
                                             </div>
+                                            </form>
                                             <div class="product-addto-links clearfix">
-                                                <button data-books_id ="{{books.idBook}}" class="add-to-wishlist" href=""></button>
 
+<form action="/addwishlist/{{books.idBook}}" method="POST">
+                                            <button data-books_id="{{books.idBook}}" class="add-to-wishlist" href=""><i
+                                                        class="bi bi-heart-beat"></i></form>
                                             </div>
-                                                        {{!-- <li><button data-books_id ="{{books.idBook}}" class="add-to-wishlist" href=""><i class="bi bi-heart-beat"></i></li> --}}
+
                                         </div>
-                                        <!--<div class="product_meta">
-                                            <span class="posted_in">Categories:
-												<a href="#">Adventure</a>,
-												<a href="#">Kids' Music</a>
-											</span>
-                                        </div>-->
+
                                     </div>
                                 </div>
                             </div>
@@ -249,11 +224,6 @@
                                 <div class="pro__tab_label tab-pane fade show active" id="nav-details" role="tabpanel">
                                     <div class="description__attribute">
                                         <p>{{books.Description}}</p>
-                                        <ul>
-                                            <li>• какой-то элемент списка</li>
-                                            <li>• какой-то элемент списка</li>
-                                            <li>• какой-то элемент списка</li>
-                                        </ul>
                                     </div>
                                 </div>
                                 <!-- End Single Tab Content -->
@@ -305,106 +275,7 @@
                             </aside>
                         </div>
                     </div>
-                    <div class="wn__related__product pt--80 pb--50 col-xl-10 offset-md-1">
-                        <div class="section__title text-center">
-                            <h2 class="title__be--2">Related Products</h2>
-                        </div>
-                        <div class="row mt--60">
-                            <div class="productcategory__slide--2 arrows_style owl-carousel owl-theme">
-                                <!-- Start Single Product -->
-                                <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
-                                    <div class="product__thumb">
-                                        <a class="first__img" href="single-product.html"><img src="/images/books/2.jpg"
-                                                alt="product image"></a>
-                                        <a class="second__img animation1" href="single-product.html"><img
-                                                src="/images/books/2.jpg" alt="product image"></a>
-                                        <div class="hot__box">
-                                            <span class="hot-label">NEW</span>
-                                        </div>
-                                    </div>
-                                    <div class="product__content content--center">
-                                        <h4><a href="single-product.html">The second book</a></h4>
-                                        <ul class="prize d-flex">
-                                            <li>$its price</li>
-                                            <!-- <li class="old_prize">$35.00</li> -->
-                                        </ul>
-                                        <div class="action">
-                                            <div class="actions_inner">
-                                                <ul class="add_to_links">
-                                                    <li><a class="cart" href="/cart"><i
-                                                                class="bi bi-shopping-cart-full"></i></a></li>
-                                                    <li><a class="wishlist" href="/wishlist"><i
-                                                                class="bi bi-heart-beat"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Start Single Product -->
-                                <!-- Start Single Product -->
-                                <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
-                                    <div class="product__thumb">
-                                        <a class="first__img" href="single-product.html"><img src="/images/books/3.jpg"
-                                                alt="product image"></a>
-                                        <a class="second__img animation1" href="single-product.html"><img
-                                                src="/images/books/3.jpg" alt="product image"></a>
-                                        <div class="hot__box color--2">
-                                            <span class="hot-label">HOT</span>
-                                        </div>
-                                    </div>
-                                    <div class="product__content content--center">
-                                        <h4><a href="single-product.html">The 3rd book</a></h4>
-                                        <ul class="prize d-flex">
-                                            <li>$It's price</li>
-                                            <!-- <li class="old_prize">$35.00</li> -->
-                                        </ul>
-                                        <div class="action">
-                                            <div class="actions_inner">
-                                                <ul class="add_to_links">
-                                                    <li><a class="cart" href="/cart"><i
-                                                                class="bi bi-shopping-cart-full"></i></a></li>
-                                                    <li><a class="wishlist" href="/wishlist"><i
-                                                                class="bi bi-heart-beat"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
 
-                                    </div>
-                                </div>
-                                <!-- Start Single Product -->
-                                <!-- Start Single Product -->
-                                <div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
-                                    <div class="product__thumb">
-                                        <a class="first__img" href="single-product.html"><img src="/images/books/7.jpg"
-                                                alt="product image"></a>
-                                        <a class="second__img animation1" href="single-product.html"><img
-                                                src="/images/books/8.jpg" alt="product image"></a>
-                                        <div class="hot__box">
-                                            <span class="hot-label">HOT</span>
-                                        </div>
-                                    </div>
-                                    <div class="product__content content--center">
-                                        <h4><a href="single-product.html">The 4th book</a></h4>
-                                        <ul class="prize d-flex">
-                                            <li>$it's price</li>
-                                            <!-- <li class="old_prize">$35.00</li> -->
-                                        </ul>
-                                        <div class="action">
-                                            <div class="actions_inner">
-                                                <ul class="add_to_links">
-                                                    <li><a class="cart" href="/cart"><i
-                                                                class="bi bi-shopping-cart-full"></i></a></li>
-                                                    <li><a class="wishlist" href="/wishlist"><i
-                                                                class="bi bi-heart-beat"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

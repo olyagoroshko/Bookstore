@@ -73,7 +73,7 @@
                                     </div>
                                 </li>
                                 <li><a href="/about">About Page</a></li>
-                                <li><a href="/admin_products">admin_products</a></li>
+
                             </ul>
                         </nav>
                     </div>
@@ -95,6 +95,7 @@
                                             <div class="switcher-options">
                                                 <div class="switcher-currency-trigger">
                                                     <div class="setting__menu">
+                                                        <span><a href="/admin_products">Admin</a></span>
                                                         <span><a href="/my-account">My Account</a></span>
                                                         <span><a href="/wishlist">My Wishlist</a></span>
                                                         <span><a href="/logout">Sign Out</a></span>
@@ -212,15 +213,17 @@
                                 <h4><a href="/edit/{{this.idBook}}">{{this.Title}}</a></h4>
                                 <ul class="prize d-flex">
                                     <li>${{this.Price}}</li>
-                                    <!-- <li class="old_prize">$35.00</li> -->
+                                  
                                 </ul>
                                 <div class="action">
                                     <div class="actions_inner">
                                         <ul class="add_to_links">
+                                            <form action="/addcart/{{this.idBook}}" method="POST">
                                             <li><button data-books_id="{{this.idBook}}" class="add-to-cart" href=""><i
-                                                        class="bi bi-shopping-cart-full"></i></li>
-                                            <li><button data-books_id="{{this.idBook}}" class="add-to-wishlist"
-                                                    href=""><i class="bi bi-heart-beat"></i></li>
+                                                        class="bi bi-shopping-cart-full"></i></li></form>
+                                            <form action="/addwishlist/{{this.idBook}}" method="POST">
+                                            <li><button data-books_id="{{this.idBook}}" class="add-to-wishlist" href=""><i
+                                                        class="bi bi-heart-beat"></i></li></form>
                                         </ul>
                                     </div>
                                 </div>

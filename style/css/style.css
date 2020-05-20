@@ -851,7 +851,7 @@ a {
 }
 
 .bg-image--2 {
-    background-image: url(../images/bg/2.jpg);
+    background-image: url(../images/bg/2.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -3590,7 +3590,7 @@ nav.menu ul li a {
     display: block;
 }
 
-.product .product__content .action .actions_inner .add_to_links li {
+.product .product__content .action .actions_inner .add_to_links form {
     margin-bottom: 4px;
     display: inline-block
 }
@@ -7978,7 +7978,7 @@ h3.widget-title-modal {
     text-transform: uppercase;
 }
 
-.wnro__table tbody td.product-remove a {
+.wnro__table tbody td.product-remove button {
     color: #3f3f3f;
     display: block;
     font-weight: 700;
@@ -7986,10 +7986,12 @@ h3.widget-title-modal {
     line-height: 1;
     padding: 10px 0;
     text-align: center;
+    background-color: white;
+    border: none;
+    margin: 0 auto;
 }
 
 .wnro__table tbody td.product-remove {
-    padding-right: 0;
     text-align: center;
     width: 40px;
 }
@@ -9221,5 +9223,3 @@ a.checkout__title {
         padding-bottom: 80px;
     }
 }
-
-0PX

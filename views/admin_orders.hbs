@@ -125,48 +125,27 @@
                                     <thead>
                                         <tr class="title-top">
                                             <th class="product-ID">ID</th>
+                                            <th class="product-buyer">Books</th>
                                             <th class="product-buyer">buyer</th>
                                             <th class="product-date">date</th>
                                             <th class="product-total">total</th>
-                                            <th class="product-statu">status</th>
 
                                         </tr>
                                     </thead>
+                                    {{#each orders}}
                                     <tbody>
                                         <tr>
                                             <td class="product-ID">
-                                                <a data-toggle="modal" title="Quick View"
-                                                    class="quickview modal-view detail-link" href="#productmodal">Order
-                                                    #1</a>
+                                                <a title="Quick View"
+                                                    class="quickview modal-view detail-link" >{{this.idIncr}}</a>
                                             </td>
-                                            <td class="product-buyer">Jhon Smith</td>
-                                            <td class="product-date">05/05/2020</td>
-                                            <td class="product-total">150$</td>
-                                            <td class="product-statu">Paid</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="product-ID">
-                                                <a data-toggle="modal" title="Quick View"
-                                                    class="quickview modal-view detail-link" href="#productmodal">Order
-                                                    #1</a>
-                                            </td>
-                                            <td class="product-buyer">Jhon Smith</td>
-                                            <td class="product-date">05/05/2020</td>
-                                            <td class="product-total">150$</td>
-                                            <td class="product-statu">Paid</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="product-ID">
-                                                <a data-toggle="modal" title="Quick View"
-                                                    class="quickview modal-view detail-link" href="#productmodal">Order
-                                                    #1</a>
-                                            </td>
-                                            <td class="product-buyer">Jhon Smith</td>
-                                            <td class="product-date">05/05/2020</td>
-                                            <td class="product-total">150$</td>
-                                            <td class="product-statu">Paid</td>
-                                        </tr>
+                                            <td class="product-buyer">{{this.Contents}}</td>
+                                            <td class="product-buyer">{{this.FCustName}} {{this.LCustName}}</td>
+                                            <td class="product-date">{{this.Purchase_date}}</td>
+                                            <td class="product-total">{{this.Price}}$</td>
+                                        </tr>                                        
                                     </tbody>
+                                    {{/each}}
                                 </table>
                             </div>
                         </form>

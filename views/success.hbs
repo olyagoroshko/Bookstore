@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Shop-Single | Bookshop Responsive Bootstrap4 Template</title>
+    <title>Home | Bookshop Responsive Bootstrap4 Template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -35,6 +35,7 @@
 
     <!-- Main wrapper -->
     <div class="wrapper" id="wrapper">
+
         <!-- Header -->
         <header id="wn__header" class="header__area header__absolute sticky__header">
             <div class="container-fluid">
@@ -42,7 +43,7 @@
                     <div class="col-md-6 col-sm-6 col-6 col-lg-2">
                         <div class="logo">
                             <a href="/">
-                                <img src="/images/logo/logo.png" alt="logo images">
+                                <img src="images/logo/logo.png" alt="logo images">
                             </a>
                         </div>
                     </div>
@@ -53,25 +54,22 @@
                                 <li class="drop"><a href="/shop-grid">Books</a>
                                     <div class="megamenu mega03">
                                         <ul class="item item03">
-                                            <li class="title">Categories</li>
+                                            <li class="title"></li>
                                             <li><a href="/shop-grid-biography">Biography </a></li>
                                             <li><a href="/shop-grid-business">Business </a></li>
-                                            <li><a href="/shop-grid-cooking">Cookbooks </a></li>
+                                            <li><a href="/shop-grid-cooking">Cooking </a></li>
                                             <li><a href="/shop-grid-health">Health & Fitness </a></li>
                                             <li><a href="/shop-grid-history">History </a></li>
+                                            <li><a href="/shop-grid-mystery">Mystery </a></li>
                                         </ul>
                                         <ul class="item item03">
-                                            <li class="title">Customer Favourite</li>
-                                            <li><a href="/shop-grid-mystery">Mystery</a></li>
-                                            <li><a href="/shop-grid-inspiration">Inspiration</a></li>
-                                            <li><a href="/shop-grid-romance">Romance</a></li>
-                                            <li><a href="/shop-grid-fiction">Fiction/Fantasy</a></li>
-                                        </ul>
-                                        <ul class="item item03">
-                                            <li class="title">Collections</li>
-                                            <li><a href="/shop-grid-self-improvement">Self-Improvement</a></li>
-                                            <li><a href="/shop-grid-fairy-tale">Fairy tales</a></li>
-                                            <li><a href="/shop-grid-humor">Humor Books</a></li>
+                                            <li class="title"></li>
+                                            <li><a href="/shop-grid-inspiration">Inspiration </a></li>
+                                            <li><a href="/shop-grid-romance">Romance </a></li>
+                                            <li><a href="/shop-grid-fiction">Fiction/Fantasy </a></li>
+                                            <li><a href="/shop-grid-self-improvement">Self-Improvement </a></li>
+                                            <li><a href="/shop-grid-humor">Humor Books </a></li>
+                                            <li><a href="/shop-grid-fairy-tale">Fairy-tales </a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -81,7 +79,6 @@
                     </div>
                     <div class="col-md-6 col-sm-6 col-6 col-lg-2">
                         <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-                         
                             <li class="wishlist">
                                 <a href="/wishlist"></a>
                             </li>
@@ -98,6 +95,7 @@
                                             <div class="switcher-options">
                                                 <div class="switcher-currency-trigger">
                                                     <div class="setting__menu">
+                                                        <span><a href="/my-account">My Account</a></span>
                                                         <span><a href="/wishlist">My Wishlist</a></span>
                                                         <span><a href="/logout">Sign Out</a></span>
                                                     </div>
@@ -149,114 +147,69 @@
             </div>
         </div>
         <!-- End Search Popup -->
-
         <!-- Start Bradcaump area -->
         <div class="ht__bradcaump__area">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="bradcaump__inner text-center">
-
+                      
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- End Bradcaump area -->
-        <!-- Start My Account Area -->
-        <!-- cart-main-area start -->
-        <div class="admin-main-area section-padding--lg bg--white">
+
+        <!-- Start Error Area -->
+        <section class="page_error section-padding--lg bg--white">
             <div class="container">
-                <div class="admin_h2">
-                    <div>
-                        <h2 class="admin_title">my account</h2>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="error__inner text-center">
+                            <div class="error__logo">
+                                <a href="#"><img src="images/others/thx.jpg" alt="error images"></a>
+                            </div>
+
+                        </div>
                     </div>
-
                 </div>
+            </div>
+        </section>
+        <!-- End Error Area -->
 
-                <div class="col-md-12 col-sm-12 ol-lg-12">
-                    <div class="modal-dialog modal__container" role="document">
-                        <div class="modal-content">
-
-                            <div class="modal-body">
-                                <div class="modal-product">
-
-                                    <div class="admin-info">
-                                        <form action="/my-account" method="post">
-                                            <div class="product__form">
-                                                <div class="row">
-                                                    <div class="col-sm-5 col-md-6">
-                                                        <div class="input__box">
-                                                            <label>First name<span>*</span></label>
-                                                            <input type="text" name="FCustName" value="{{customers.FCustName}}" required>
-                                                        </div>
-                                                        <div class="input__box">
-                                                            <label>Email address <span>*</span></label>
-                                                            <input type="email" name="Email"
-                                                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                                                                value="{{customers.Email}}"
-                                                                required>
-                                                        </div>
-                                                        <div class="input__box">
-                                                            <label>Address <span>*</span></label>
-                                                            <input type="text" name="Address"
-                                                            value="{{customers.Address}}"
-                                                             required>
-                                                        </div>
-                                                        <div class="input__box">
-                                                            <label>Password<span>*</span></label>
-                                                            <input type="password" name = "Passwd" id="Passwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-5 col-md-6">
-                                                        <div class="input__box">
-                                                            <label>Last name<span>*</span></label>
-                                                            <input type="text" name="LCustName"
-                                                            value="{{customers.LCustName}}" required>
-                                                        </div>
-                                                        <div class="input__box">
-                                                            <label>Phone number<span>*</span></label>
-                                                            <input type="tel" name="Phone"
-                                                            value="{{customers.Phone}}" pattern="[8029][0-9]{10}"
-                                                                required>
-                                                        </div>
-                                                        <div class="input__box">
-                                                            <label>Credit card № <span>*</span></label>
-                                                            <input type="text" name="CardNum"
-                                                            value="{{customers.CardNum}}" required>
-                                                        </div>
-                                                        <div class="input__box">
-                                                            <label>Confirm password<span>*</span></label>
-                                                            <input type="password" name = "CPasswd" id="CPasswd" onkeyup="valid(event)" required>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form__btn">
-                                                    <button id="submit">Save</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+        <!-- Footer Area -->
+        <footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
+            <div class="footer-static-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="footer__widget footer__menu">
+                                <div class="ft__logo">
+                                    <a href="/">
+                                        <img src="images/logo/3.png" alt="logo">
+                                    </a>
+                                    <p>Bookstor (c)</p>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </footer>
+        <!-- //Footer Area -->
 
+    </div>
+    <!-- //Main wrapper -->
 
-        </div>
-        <!-- //Main wrapper -->
-
-        <!-- JS Files -->
-        <script src="/js/script.js"></script>
-        <script src="/js/vendor/jquery-3.2.1.min.js"></script>
-        <script src="/js/popper.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
-        <script src="/js/plugins.js"></script>
-        <script src="/js/active.js"></script>
-        <script src="/js/passwdCheck.js"></script>
-
+    <!-- JS Files -->
+    <script src="js/script.js"></script>
+    <script src="js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/active.js"></script>
 
 </body>
 

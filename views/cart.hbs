@@ -86,7 +86,7 @@
                             <li class="shopcart"><a href="/cart"> </a>
                             </li>
                             <li class="setting__bar__icon">
-                                <a class="setting__active" href="#"></a>
+                                <a class="setting__active" href=""></a>
                                 <div class="searchbar__content setting__block">
                                     <div class="content-inner">
                                         <div class="switcher-currency">
@@ -100,7 +100,7 @@
                                                         <span><a href="/wishlist">My Wishlist</a></span>
                                                         <span><a href="/register">Create An Account</a></span>
                                                         <span><a href="/login">Sign In</a></span>
-                                                        <span><a href="#">Sign Out</a></span>
+                                                        <span><a href="/logout">Sign Out</a></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -135,33 +135,14 @@
             </div>
         </header>
         <!-- //Header -->
-        <!-- Start Search Popup -->
-        <div class="box-search-content search_active block-bg close__top">
-            <form id="search_mini_form" class="minisearch" action="#">
-                <div class="field__search">
-                    <input type="text" placeholder="Search entire store here...">
-                    <div class="action">
-                        <a href="#"><i class="zmdi zmdi-search"></i></a>
-                    </div>
-                </div>
-            </form>
-            <div class="close__wrap">
-                <span>close</span>
-            </div>
-        </div>
-        <!-- End Search Popup -->
+     
         <!-- Start Bradcaump area -->
         <div class="ht__bradcaump__area">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="bradcaump__inner text-center">
-                            <!-- <h2 class="bradcaump-title">Shopping Cart</h2>
-                            <nav class="bradcaump-content">
-                                <a class="breadcrumb_item" href="/">Home</a>
-                                <span class="brd-separetor">/</span>
-                                <span class="breadcrumb_item active">Shopping Cart</span>
-                            </nav> -->
+
                         </div>
                     </div>
                 </div>
@@ -173,66 +154,36 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 ol-lg-12">
-                        <form action="#">
                             <div class="table-content wnro__table table-responsive">
                                 <table>
                                     <thead>
                                         <tr class="title-top">
-                                            <th class="product-thumbnail">Image</th>
+
                                             <th class="product-name">Product</th>
                                             <th class="product-price">Price</th>
-                                            <th class="product-quantity">Quantity</th>
-                                            <th class="product-remove"></th>
+
+                                            <th class="product-quantity">Del</th>
                                         </tr>
                                     </thead>
+
                                     <tbody class="cart-items">
-                                        <!-- <tr class="checkout">
-                                            <td class="product-thumbnail">
-                                                <a href="#"><img src="images/product/sm-3/1.jpg" alt="product img"></a>
-                                            </td>
-                                            <td class="product-name"><a href="#">Natoque penatibus</a></td>
-                                            <td class="product-price">
-                                                <span class="price">$10</span>
-                                            </td>
-                                            <td class="product-quantity"><input type="number" class="quantity" value="1"></td>
-                                            <td class="product-subtotal">$165.00</td>
-                                            <td class="product-remove"><a class="btn-remove">X</a></td>
-                                        </tr>
+                                        {{#each orderraws}}
                                         <tr class="checkout">
-                                            <td class="product-thumbnail">
-                                                <a href="#"><img src="images/product/sm-3/1.jpg" alt="product img"></a>
-                                            </td>
-                                            <td class="product-name"><a href="#">Natoque penatibus</a></td>
+                                            <td class="product-name"><a>{{this.Title}}</a></td>
                                             <td class="product-price">
-                                                <span class="price">$15</span>
+                                                <span class="price">${{this.Price}}</span>
                                             </td>
-                                            <td class="product-quantity"><input type="number" class="quantity" value="1"></td>
 
-                                            <td class="product-remove"><a class="btn-remove">X</a></td>
+                                            <form action="/deletecart/{{this.idRaw}}" method="GET">
+                                            <td class="product-remove"><button type="submit" class="btn-remove">×</button></td>
+                                            </form>
                                         </tr>
-                                        <tr class="checkout">
-                                            <td class="product-thumbnail">
-                                                <a href="#"><img src="images/product/sm-3/1.jpg" alt="product img"></a>
-                                            </td>
-                                            <td class="product-name"><a href="#">Natoque penatibus</a></td>
-                                            <td class="product-price">
-                                                <span class="price">$5</span>
-                                            </td>
-                                            <td class="product-quantity"><input type="number" class="quantity" value="1"></td>
-
-                                            <td class="product-remove"><a class="btn-remove">X</a></td>
-                                        </tr> -->
+                                        {{/each}}
                                     </tbody>
                                 </table>
                             </div>
-                        </form>
                         <div class="cartbox__btn">
-                            <!-- <div class="row">
-                                <div class="cart__total__amount col-md-8">
-                                    <span>Grand Total</span>
-                                    <span class="grandTotal">$20</span>
-                                </div>
-                            </div> -->
+
                         </div>
                         <div class="col">
                             <ul

@@ -520,85 +520,73 @@ app.post("/my-account", urlencodedParser,
                 });
         });
     });
-// //////////////////////////////////////////////////////////////////////////////////////////////////////
+
 app.get('/checkout', authenticationMiddleware(),
     (req, res) => {
         const id = req.user.user_id;
         pool.query("SELECT * FROM customers WHERE idCustomer = ?", [id], (err, result) => {
             if (err) return console.log(err);
-            res.render("checkout.hbs", {
-                customers: result[0]
+            pool.query("SELECT b.Title, b.Price, o.idBook FROM books b INNER JOIN orderraws o ON b.idBook=o.idBook WHERE o.idCust=?", [id], (err, result1) => {
+                if (err) return console.log(err);
+                pool.query("SELECT SUM(b.Price) as sum FROM books b INNER JOIN orderraws o ON b.idBook=o.idBook WHERE o.idCust=?", [id], (err, sum) => {
+                    if (err) return console.log(err);
+                    res.render("checkout.hbs", {
+                        customers: result[0],
+                        orderraws: result1,
+                        sum: sum
+                    });
+                })
+            })
+        });
+    });
+
+app.post('/checkout', authenticationMiddleware(),
+    (req, res) => {
+        if (!req.body) return res.sendStatus(400);
+        const idCustomer = req.user.user_id;
+        const FCustName = req.body.FCustName;
+        const LCustName = req.body.LCustName;
+        const Phone = req.body.Phone;
+        const Email = req.body.Email;
+        const CardNum = req.body.CardNum;
+        const Address = req.body.Address;
+
+        pool.query("UPDATE customers SET FCustName=?, LCustName=?, Phone=?, Email=?, CardNum=?, Address=? WHERE idCustomer=?;", [FCustName, LCustName, Phone, Email, CardNum, Address, idCustomer],
+            function(err, data) {
+                if (err) return console.log(err);
+                pool.query("SELECT GROUP_CONCAT(b.Title ORDER BY b.idBook ASC SEPARATOR ', ') as contents, SUM(b.Price) as sum FROM orderraws o INNER JOIN books b ON b.idBook=o.idBook WHERE o.idCust=?", [idCustomer],
+                    function(err, data) {
+                        const contents = data[0].contents
+                        const sum = data[0].sum
+                        if (err) return console.log(err);
+                        pool.query("INSERT INTO `orders` (`idCust`, `Purchase_date`, `idIncr`, `Contents`, `Price`) VALUES (?, NOW(), NULL, ?, ?); ", [idCustomer, contents, sum], function(err, rows) {
+                            if (err) return console.log(err);
+                            pool.query("DELETE FROM orderraws where idCust=?;", [idCustomer],
+                                function(err, rows) {
+                                    if (err) return console.log(err);
+                                    res.redirect('/success');
+
+                                })
+                        });
+                    });
+            })
+    });
+
+app.get('/wishlist', authenticationMiddleware(),
+    (req, res) => {
+        const id = req.user.user_id;
+        pool.query("SELECT o.idBook, o.idLine, b.Title, b.Price FROM wishraws o INNER JOIN books b ON b.idBook=o.idBook WHERE idCust = ?", [id], (err, result) => {
+            if (err) return console.log(err);
+            console.log(result)
+            res.render("wishlist.hbs", {
+                orderraws: result
             });
         });
     });
 
-app.post("/checkout", urlencodedParser,
-    authenticationMiddleware(),
-    function(req, res) {
-        console.log(req.body);
-        if (req.body.key.length != 0) {
-            let key = Object.keys(req.body.key);
-        } else {
-            res.send(1);
-        }
-
-    });
-app.post('/checkout', authenticationMiddleware(),
-    urlencodedParser,
-    function(req, res) {
-        if (!req.body) return res.sendStatus(400);
-        const idBook = req.params.id;
-        const idReview = null;
-        const Nickname = req.body.nickname;
-        const Summary = req.body.summary;
-        const Text = req.body.text;
-        console.log(idReview, idBook, Nickname, Summary, Text);
-        pool.query("INSERT INTO reviews (idOrder, idBook, Summary, Text, Nickname) VALUES (?, ?, ?, ?, ?)", [idReview, idBook, Summary, Text, Nickname], function(err, rows) {
-            if (err) return console.log(err);
-            res.redirect(idBook);
-        });
-    });
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-app.post('/cart', authenticationMiddleware(), function(req, res) {
-    let books = {};
-    console.log(req.body.key);
-    if (req.body.key.length != 0) {
-        pool.query('SELECT * FROM books WHERE idBook IN(' + req.body.key.join(',') + ')', function(err, result, fields) {
-            if (err) throw err;
-            console.log(result);
-            for (let i = 0; i < result.length; i++) {
-                books[result[i]["idBook"]] = result[i];
-            }
-            res.json(books);
-        });
-    } else {
-        res.send('0');
-    }
-});
-
-app.post('/wishlist', authenticationMiddleware(), function(req, res) {
-    let books = {};
-    console.log(req.body.key);
-    if (req.body.key.length != 0) {
-        pool.query('SELECT * FROM books WHERE idBook IN(' + req.body.key.join(',') + ')', function(err, result, fields) {
-            if (err) throw err;
-            console.log(result);
-            for (let i = 0; i < result.length; i++) {
-                books[result[i]["idBook"]] = result[i];
-            }
-            res.json(books);
-        });
-    } else {
-        res.send('0');
-    }
-});
-
-app.get('/wishlist', (req, res) => {
-    res.render('wishlist.hbs');
-});
-
 app.get('/login', (req, res) => {
+    req.logout();
+    req.session.destroy();
     res.render('login.hbs');
 });
 
@@ -615,29 +603,80 @@ app.get('/logout', authenticationMiddleware(), function(req, res) {
     res.redirect('/');
 })
 
-app.get('/checkout', authenticationMiddleware(), (req, res) => {
-    res.render('checkout.hbs');
-});
+app.get('/cart', authenticationMiddleware(),
+    (req, res) => {
+        const id = req.user.user_id;
+        pool.query("SELECT o.idBook, o.idRaw, b.Title, b.Price FROM orderraws o INNER JOIN books b ON b.idBook=o.idBook WHERE idCust = ?", [id], (err, result) => {
+            if (err) return console.log(err);
+            console.log(result)
+            res.render("cart.hbs", {
+                orderraws: result
+            });
+        });
+    });
 
-app.get('/cart', authenticationMiddleware(), (req, res) => {
-    res.render('cart.hbs');
-});
+app.get('/deletecart/:id', authenticationMiddleware(),
+    (req, res, next) => {
+        const id = req.params.id;
+        console.log(id);
+        pool.query("DELETE FROM orderraws WHERE idRaw=?", [id], (err, result) => {
+            if (err) return console.log(err);
+            res.redirect('/cart');
+        })
+    })
+
+app.get('/deletewish/:id', authenticationMiddleware(),
+    (req, res, next) => {
+        const id = req.params.id;
+        console.log(id);
+        pool.query("DELETE FROM wishraws WHERE idLine=?", [id], (err, result) => {
+            if (err) return console.log(err);
+            res.redirect('/wishlist');
+        })
+    })
 
 app.get('/admin_orders', (req, res) => {
     var id = JSON.stringify(req.user);
     console.log('check')
     console.log(id);
     if (id === "{\"user_id\":40}") {
-        res.render('admin_orders.hbs');
+        pool.query("SELECT o.idCust, o.Purchase_date, o.Contents, o.Price, o.idIncr, c.FCustName, c.LCustName FROM orders o INNER JOIN customers c ON c.idCustomer=o.idCust", (err, result) => {
+            if (err) return console.log(err);
+            res.render('admin_orders.hbs', {
+                orders: result
+            })
+        })
     } else {
         res.redirect("error404");
     }
 });
 
+app.post("/addcart/:id", authenticationMiddleware(),
+    function(req, res) {
+        const idBook = req.params.id;
+        const user_id = JSON.stringify(req.user.user_id);
+        pool.query("INSERT INTO `orderraws` (`idRaw`, `idCust`, `idBook`) VALUES (NULL, ?, ?);", [user_id, idBook], function(err, rows) {
+            if (err) return console.log(err);
+            res.redirect('/cart');
+        });
+    });
+
+app.post("/addwishlist/:id", authenticationMiddleware(),
+    function(req, res) {
+        const idBook = req.params.id;
+        const user_id = JSON.stringify(req.user.user_id);
+        pool.query("INSERT INTO `wishraws` (`idLine`, `idCust`, `idBook`) VALUES (NULL, ?, ?);", [user_id, idBook], function(err, rows) {
+            if (err) return console.log(err);
+            res.redirect('/wishlist');
+        });
+    });
+
 app.get('/about', authenticationMiddleware(), (req, res) => {
     res.render('about.hbs');
 });
-
+app.get('/success', authenticationMiddleware(), (req, res) => {
+    res.render('success.hbs');
+});
 app.listen(3000, function() {
     console.log("Сервер ожидает подключения...");
 });

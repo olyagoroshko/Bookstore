@@ -86,7 +86,7 @@
                             <li class="shopcart"><a href="/cart"> </a>
                             </li>
                             <li class="setting__bar__icon">
-                                <a class="setting__active" href="#"></a>
+                                <a class="setting__active" href=""></a>
                                 <div class="searchbar__content setting__block">
                                     <div class="content-inner">
                                         <div class="switcher-currency">
@@ -100,7 +100,7 @@
                                                         <span><a href="/wishlist">My Wishlist</a></span>
                                                         <span><a href="/register">Create An Account</a></span>
                                                         <span><a href="/login">Sign In</a></span>
-                                                        <span><a href="#">Sign Out</a></span>
+                                                        <span><a href="/logout">Sign Out</a></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -137,11 +137,11 @@
         <!-- //Header -->
         <!-- Start Search Popup -->
         <div class="box-search-content search_active block-bg close__top">
-            <form id="search_mini_form" class="minisearch" action="#">
+            <form id="search_mini_form" class="minisearch" action="">
                 <div class="field__search">
                     <input type="text" placeholder="Search entire store here...">
                     <div class="action">
-                        <a href="#"><i class="zmdi zmdi-search"></i></a>
+                        <a href=""><i class="zmdi zmdi-search"></i></a>
                     </div>
                 </div>
             </form>
@@ -156,12 +156,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="bradcaump__inner text-center">
-                            <!-- <h2 class="bradcaump-title">Wishlist</h2>
-                            <nav class="bradcaump-content">
-                                <a class="breadcrumb_item" href="/">Home</a>
-                                <span class="brd-separetor">/</span>
-                                <span class="breadcrumb_item active">Wishlist</span>
-                            </nav> -->
+                       
                         </div>
                     </div>
                 </div>
@@ -169,66 +164,44 @@
         </div>
         <!-- End Bradcaump area -->
         <!-- cart-main-area start -->
-        <div class="wishlist-area section-padding--lg bg__white">
+        <div class="cart-main-area section-padding--lg bg--white">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="wishlist-content">
-                            <form action="#">
-                                <div class="wishlist-table wnro__table table-responsive">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th class="product-remove"></th>
-                                                <th class="product-thumbnail"></th>
-                                                <th class="product-name"><span class="nobr">Product Name</span></th>
-                                                <th class="product-price"><span class="nobr"> Unit Price </span></th>
-                                                <th class="product-stock-stauts"><span class="nobr"> Stock Status
-                                                    </span></th>
-                                                <th class="product-add-to-cart"></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="wishlist-items">
-                                            {{!-- <tr>
-                                                <td class="product-remove"><a href="#">×</a></td>
-                                                <td class="product-thumbnail">
-                                                    <a href="#"><img src="images/product/sm-3/1.jpg" alt=""></a>
-                                                </td>
-                                                <td class="product-name"><a href="#">Natoque penatibus</a></td>
-                                                <td class="product-price"><span class="amount">$165.00</span></td>
-                                                <td class="product-stock-status"><span class="wishlist-in-stock">In
-                                                        Stock</span></td>
-                                                <td class="product-add-to-cart"><a href="#"> Add to Cart</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="product-remove"><a href="#">×</a></td>
-                                                <td class="product-thumbnail">
-                                                    <a href="#"><img src="images/product/sm-3/2.jpg" alt=""></a>
-                                                </td>
-                                                <td class="product-name"><a href="#">Quisque fringilla</a></td>
-                                                <td class="product-price"><span class="amount">$50.00</span></td>
-                                                <td class="product-stock-status"><span class="wishlist-in-stock">In
-                                                        Stock</span></td>
-                                                <td class="product-add-to-cart"><a href="#"> Add to Cart</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="product-remove"><a href="#">×</a></td>
-                                                <td class="product-thumbnail">
-                                                    <a href="#"><img src="images/product/sm-3/3.jpg" alt=""></a>
-                                                </td>
-                                                <td class="product-name"><a href="#">Quisque fringilla</a></td>
-                                                <td class="product-price"><span class="amount">$65.00</span></td>
-                                                <td class="product-stock-status"><span class="wishlist-in-stock">In
-                                                        Stock</span></td>
-                                                <td class="product-add-to-cart"><a href="#"> Add to Cart</a></td>
-                                            </tr> --}}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </form>
-                        </div>
+                    <div class="col-md-12 col-sm-12 ol-lg-12">
+                            <div class="table-content wnro__table table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr class="title-top">
+
+                                            <th class="product-name">Product</th>
+                                            <th class="product-price">Price</th>
+
+                                            <th class="product-quantity">Del</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody class="cart-items">
+                                        {{#each orderraws}}
+                                        <tr class="checkout">
+                                            <td class="product-name"><a>{{this.Title}}</a></td>
+                                            <td class="product-price">
+                                                <span class="price">${{this.Price}}</span>
+                                            </td>
+
+                                            <form action="/deletewish/{{this.idLine}}" method="GET">
+                                            <td class="product-remove"><button type="submit" class="btn-remove">×</button></td>
+                                            </form>
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="cartbox__btn">
+                                                    </div>
                     </div>
+
                 </div>
+
             </div>
         </div>
         <!-- cart-main-area end -->
